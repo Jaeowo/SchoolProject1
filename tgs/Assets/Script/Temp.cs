@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Temp : MonoBehaviour
 {
-    int a = 0;
+    //int a = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
