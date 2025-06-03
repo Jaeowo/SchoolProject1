@@ -15,8 +15,12 @@ public class PlayerMoving : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Rotate();
+        if (!ItemManager.Instance.GetIsInventoryOpend())
+        {
+            Move();
+            Rotate();
+        }
+        
     }
 
     private void Move()
@@ -26,6 +30,10 @@ public class PlayerMoving : MonoBehaviour
 
         Vector3 dir = new Vector3(moveInput.x, moveInput.y, 0).normalized;
         transform.position += dir * moveSpeed * Time.deltaTime;
+
+     
+
+
     }
 
     private void Rotate()
