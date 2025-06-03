@@ -1,0 +1,3 @@
+Pig	豚	ただの豚	FALSE
+Creeper	クリーパー	怖い	FALSE
+Bee	はち	黄色	FALSE
