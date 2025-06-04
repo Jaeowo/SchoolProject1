@@ -1,1 +1,1 @@
-[{"id":"Creeper","itemName":"クリーパー","description":"怖い","isUsing":false},{"id":"Bee","itemName":"はち","description":"黄色","isUsing":false}]
+[{"id":"Creeper","itemName":"クリーパー","description":"怖い","isUsing":false},{"id":"Bee","itemName":"はち","description":"黄色","isUsing":true}]
