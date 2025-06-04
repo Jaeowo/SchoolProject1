@@ -58,7 +58,7 @@ public class ItemManager : MonoBehaviour
         int currentSelected = myItemList.FindIndex(item => item.isUsing);
 
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             inventory.SetActive(true);
             if (myItemList != null)
@@ -68,7 +68,7 @@ public class ItemManager : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             isInventoryOpend = false;
             inventory.SetActive(false);
