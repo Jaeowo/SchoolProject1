@@ -26,8 +26,21 @@ public class Item
 
 public class ItemManager : MonoBehaviour
 {
-    public static ItemManager Instance { get; private set; }
+    private static ItemManager instance;
+    
+    private ItemManager()
+    {
 
+    }
+
+    public static ItemManager GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = new ItemManager();
+        }
+        return instance;
+    }
 
     public GameObject inventory;
     public TextAsset itemDatabase;
@@ -43,7 +56,6 @@ public class ItemManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
 
         SettingItemData();
         UpdateItemImages();
