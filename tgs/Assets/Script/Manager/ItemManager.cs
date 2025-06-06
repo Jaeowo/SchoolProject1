@@ -26,21 +26,7 @@ public class Item
 
 public class ItemManager : MonoBehaviour
 {
-    private static ItemManager instance;
-    
-    private ItemManager()
-    {
-
-    }
-
-    public static ItemManager GetInstance()
-    {
-        if (instance == null)
-        {
-            instance = new ItemManager();
-        }
-        return instance;
-    }
+    public static ItemManager Instance { get; private set; }
 
     public GameObject inventory;
     public TextAsset itemDatabase;
@@ -60,6 +46,15 @@ public class ItemManager : MonoBehaviour
         SettingItemData();
         UpdateItemImages();
         UpdateItemDescription();
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
 
     }
 

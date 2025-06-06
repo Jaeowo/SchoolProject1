@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMoving : MonoBehaviour
 {
     private float moveSpeed = 5.0f;
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
     private Vector2 moveInput;
 
     // Character rotate by horizontal moving
@@ -17,7 +17,7 @@ public class PlayerMoving : MonoBehaviour
 
     void Update()
     {
-        if (!ItemManager.GetInstance().GetIsInventoryOpend())
+        if (!ItemManager.Instance.GetIsInventoryOpend())
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
