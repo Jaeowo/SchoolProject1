@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         InputText();
 
         // TestCode
-        StartDialogue("bird");
+        //StartDialogue("bird");
 
     }
 
