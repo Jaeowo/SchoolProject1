@@ -26,7 +26,7 @@ public class Item
 
 public class ItemManager : MonoBehaviour
 {
-    public static ItemManager Instance { get; private set; }
+    public static ItemManager instance { get; private set; }
 
     public GameObject inventory;
     public TextAsset itemDatabase;
@@ -47,13 +47,13 @@ public class ItemManager : MonoBehaviour
         UpdateItemImages();
         UpdateItemDescription();
 
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
+        instance = this;
 
 
     }

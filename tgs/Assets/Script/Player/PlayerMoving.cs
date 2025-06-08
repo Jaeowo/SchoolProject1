@@ -17,7 +17,7 @@ public class PlayerMoving : MonoBehaviour
 
     void Update()
     {
-        if (!ItemManager.Instance.GetIsInventoryOpend())
+        if (!ItemManager.instance.GetIsInventoryOpend())
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");

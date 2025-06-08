@@ -38,11 +38,8 @@ public class Speeker
 
 public class DialogueManager : MonoBehaviour
 {
-    private static DialogueManager instance;
-    public static DialogueManager GetInstance()
-    {
-        return instance;
-    }
+    public static DialogueManager instance { get; private set; }
+
 
     public GameObject dialogueObject;
     public TextMeshProUGUI dialogueText;
@@ -54,12 +51,17 @@ public class DialogueManager : MonoBehaviour
     private List<Dialogue> currentChapterDialogueList = new List<Dialogue>();
     private int chapterIndex = 0;
 
+    public bool isInDialogue { get; private set; } = false;
+
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
+        if (instance != null && instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
     }
 
     private void Start()
@@ -71,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         InputText();
 
         // TestCode
-        //StartDialogue("bird");
+        StartDialogue("bird");
 
     }
 
@@ -83,7 +85,6 @@ public class DialogueManager : MonoBehaviour
             NextDialogue();
         }
     }
-
 
     private void InputText()
     {
@@ -100,6 +101,7 @@ public class DialogueManager : MonoBehaviour
     // Input chapter name to argument, Start this chapter's dialogue
     public void StartDialogue(string chapter)
     {
+        isInDialogue = true;
         FilterDialogueByChapter(chapter);
         dialogueObject.SetActive(true);
         chapterIndex = 0;
@@ -108,6 +110,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        isInDialogue = false;
         dialogueObject.SetActive(false);
     }
 
@@ -137,7 +140,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Vector3 speakerWorldPosition = speekerData.character.transform.position + new Vector3(0f, 3.5f, 0f);
+        Vector3 speakerWorldPosition = speekerData.character.transform.position + new Vector3(0f, 2.5f, 0f);
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(speakerWorldPosition);
         dialogueObject.transform.position = screenPosition;
     }

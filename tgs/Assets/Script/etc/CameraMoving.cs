@@ -3,16 +3,19 @@ using UnityEngine;
 public class CameraMoving : MonoBehaviour
 {
     public GameObject player;
-    private Transform playertransform;
+    private Transform playerTransform;
 
     void Start()
     {
-        playertransform = player.transform;
+        playerTransform = player.transform;
     }
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, playertransform.position, 2f * Time.deltaTime);
-        transform.Translate(0, 0, -10);
+        if (DialogueManager.instance != null && DialogueManager.instance.isInDialogue)
+            return;
+
+        Vector3 targetPos = new Vector3(playerTransform.position.x, playerTransform.position.y, -10f);
+        transform.position = Vector3.Lerp(transform.position, targetPos, 2f * Time.deltaTime);
     }
 }
