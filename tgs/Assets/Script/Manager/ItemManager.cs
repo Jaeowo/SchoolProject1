@@ -94,14 +94,14 @@ public class ItemManager : MonoBehaviour
 
         // get & remove test
 
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            RemoveItem("Pig");
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GetItem("Pig");
-        }
+        //if(Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    RemoveItem("Pig");
+        //}
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    GetItem("Pig");
+        //}
     }
 
     private void SettingItemData()
@@ -134,6 +134,7 @@ public class ItemManager : MonoBehaviour
         // string -> deserialize -> list
         string jdata = File.ReadAllText(Application.dataPath + "/Resources/MyItemText.txt");
         myItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
+
     }
 
     public void slotSelected(int slotNum)
