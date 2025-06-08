@@ -55,7 +55,8 @@ public class ItemManager : MonoBehaviour
 
         instance = this;
 
-
+        //Test
+        ClearMyItemList();
     }
 
     private void Update()
@@ -247,6 +248,12 @@ public class ItemManager : MonoBehaviour
             Debug.Log("Item doesn't exist So it can't remove item");
         }
 
+    }
+
+    public void ClearMyItemList()
+    {
+        myItemList = new List<Item>(); 
+        Save();
     }
 
 }
