@@ -42,13 +42,16 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 3635349759
+    uniqueID: 26648757
     locked: 0
   - name: NPC
-    uniqueID: 2777838869
+    uniqueID: 4107852915
     locked: 0
-  - name: Character
-    uniqueID: 3400003215
+  - name: Player
+    uniqueID: 3336057183
+    locked: 0
+  - name: UI
+    uniqueID: 793240067
     locked: 0
   m_RenderingLayers:
   - Default

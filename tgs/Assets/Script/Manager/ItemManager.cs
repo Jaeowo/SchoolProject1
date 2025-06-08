@@ -28,7 +28,6 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager Instance { get; private set; }
 
-
     public GameObject inventory;
     public TextAsset itemDatabase;
     public List<Item> allItemList, myItemList;
@@ -43,11 +42,19 @@ public class ItemManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
 
         SettingItemData();
         UpdateItemImages();
         UpdateItemDescription();
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
 
     }
 
