@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInfoManager : MonoBehaviour
@@ -5,23 +6,14 @@ public class PlayerInfoManager : MonoBehaviour
     // Singleton
     public static PlayerInfoManager instance;
 
-    // Player status information
-    private bool isStage01Clear = false;
-
-    // Getter & Setter
-    public bool IsStae01Clear
-    {
-        get => isStage01Clear;
-        set => isStage01Clear = value;
-    }
+    private Dictionary<string, bool> progress = new Dictionary<string, bool>();
 
     private void Awake()
     {
         // Singleton Setting
-        if (instance = null)
+        if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -29,14 +21,25 @@ public class PlayerInfoManager : MonoBehaviour
         }
     }
 
+    // After finishing the script, set progress 
+    // In addition to conversations, You can save various information
 
-    void Start()
+    // Example) PlayerInfoManager.instance.SetProgress("Chapter1.Bird_1", true);
+    public void SetProgress(string key, bool value)
     {
-        
+        progress[key] = value;
     }
 
-    void Update()
+    // Check progress, According to progress, StartConversation...
+
+    // Example)
+    // if (PlayerInfoManager.instance.SetProgress("Chapter1.Bird_1"))
+    // {
+    //      Start dialogue... You want..
+    // }
+
+    public bool GetProgress(string key)
     {
-        
+        return progress.ContainsKey(key) && progress[key];
     }
 }

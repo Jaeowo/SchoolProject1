@@ -80,22 +80,10 @@ public class DialogueManager : MonoBehaviour
     private void Update()
     {
         // Test
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            NextDialogue();
-        }
-    }
-
-    private void InputText()
-    {
-        //string _chapter, string _character, string _dialogueText, int _dialogueIndex
-
-        //Test
-        allDialogueList.Add(new Dialogue("bird", "nezumi", "Butterfly!", 0, false));
-        allDialogueList.Add(new Dialogue("bird", "bird", "hey", 1, false));
-        allDialogueList.Add(new Dialogue("bird", "bird", "nezumi!", 1, false));
-        allDialogueList.Add(new Dialogue("bird", "nezumi", "why?", 1, false));
-        allDialogueList.Add(new Dialogue("Capybara", "nezumi", "help", 1, false));
+        //if (Input.GetKeyDown(KeyCode.N))
+        //{
+        //    NextDialogue();
+        //}
     }
 
     // Input chapter name to argument, Start this chapter's dialogue
@@ -112,23 +100,26 @@ public class DialogueManager : MonoBehaviour
     {
         isInDialogue = false;
         dialogueObject.SetActive(false);
+
+        // Save Progress
+        PlayerInfoManager.instance.SetProgress(currentChapter, true);
     }
 
-    IEnumerator TypingEffect(TextMeshProUGUI targetText, string text)
-    {
-        targetText.text = string.Empty;
-        StringBuilder stringBuilder = new StringBuilder();
+    //IEnumerator TypingEffect(TextMeshProUGUI targetText, string text)
+    //{
+    //    targetText.text = string.Empty;
+    //    StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < text.Length; i++)
-        {
-            stringBuilder.Append(text[i]);
-            targetText.text = stringBuilder.ToString();
-            yield return new WaitForSeconds(0.05f);
-        }
+    //    for (int i = 0; i < text.Length; i++)
+    //    {
+    //        stringBuilder.Append(text[i]);
+    //        targetText.text = stringBuilder.ToString();
+    //        yield return new WaitForSeconds(0.05f);
+    //    }
 
-        var current = currentChapterDialogueList[chapterIndex - 1];
-        current.isDone = true;
-    }
+    //    var current = currentChapterDialogueList[chapterIndex - 1];
+    //    current.isDone = true;
+    //}
     
     // Find character who is speaking, Locate speech bubble
     private void SetDialoguelocation(Dialogue currentDialogue)
@@ -168,10 +159,28 @@ public class DialogueManager : MonoBehaviour
 
         SetDialoguelocation(currentDialogue);
 
-        StopAllCoroutines(); 
-        StartCoroutine(TypingEffect(dialogueText, currentDialogue.dialogueText));
+        StopAllCoroutines();
+        //StartCoroutine(TypingEffect(dialogueText, currentDialogue.dialogueText));
+        dialogueText.text = currentDialogue.dialogueText;
+        currentDialogue.isDone = true;
 
         chapterIndex++;
     }
+
+    private void InputText()
+    {
+        //string _chapter, string _character, string _dialogueText, int _dialogueIndex
+
+        //Test
+        #region TestDialogue
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "<wave>Butterfly!", 0, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "hey", 1, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "nezumi!", 2, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "why?", 3, false));
+
+        allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "find branch", 0, false));
+        #endregion
+    }
+
 
 }

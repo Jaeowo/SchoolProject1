@@ -1,1 +1,1 @@
-[]
+[{"id":"Creeper","itemName":"クリーパー","description":"怖い","isUsing":true}]
