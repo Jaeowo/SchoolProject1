@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
@@ -179,6 +179,51 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "why?", 3, false));
 
         allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "find branch", 0, false));
+        #endregion
+
+        #region Chapter 1: Bird
+        //allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "<wave>Butterfly!", 0, false));
+        //allDialogueList.Add(new Dialogue("hey", "bird", "<wave>やあ！ネズミちゃん！", 0, false));
+
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "ここで君を見るのは初めてだね。迷子かな？", 0, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "うん、たぶん。助けてくれる？", 1, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "んー、欲しいものくれたら手伝ってあげるよ！", 2, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "何ほしいの？", 3, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "巣作ってるんだ！", 4, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "あと枝が一本だけ欲しいんだ！見つけてくれたら助けるね", 5, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "わかった！", 6, false));
+
+        allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "枝見つけた？", 0, false));
+
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "やったね！欲しかった枝だ！？", 0, false)); //枝渡した後
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "じゃーー", 1, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "この道進めば、他にも家まで案内してくれる動物がいるよ", 2, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "笑", 3, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "・・・（こんなことで助かるのかな？）", 4, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "<swing>（こんなことで助かるのかな？）", 5, false));
+        #endregion
+
+        #region Chapter 2: Capy
+        allDialogueList.Add(new Dialogue("chapter2.capy00", "nezumi", "（ここに助けてくれる人がいるかも。ちょっと聞いてみよう。）", 0, false)); //nezu chan自分で自動的に話す
+
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "nezumi", "こんにちは！ちょっと手伝ってくれる？", 0, false)); //dialogue with capy start
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "nezumi", "ネズミ村に帰る道教えてほしい！", 1, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "ネズミ村か。。", 2, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "ごめんね、ぼくもよくわからないけど、。。", 3, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "ぼうけんしゃの友だちが知ってるかもよ～", 4, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "nezumi", "ぼうけんしゃの友だち？", 5, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "うん！あっちの家に住んでるけど、", 6, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "いつもかぎがかかってるらしい。。", 7, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "nezumi", "そうか。。", 8, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "でね！", 9, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "甘いゆずくれたら、その家に入るひみつを教えてあげるかな～", 10, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy01", "nezumi", "ゆずか〜。さがしてみよっかな。）", 11, false));
+
+        allDialogueList.Add(new Dialogue("chapter2.capy02", "capy", "<swing>甘いゆずほしいな～", 0, false)); //capy dialogue if quest is not done yet
+        #endregion
+
+        #region Chapter 3: Kuma
+
         #endregion
     }
 
