@@ -20,24 +20,41 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DialogueCheck();
+    }
+
+    public void DialogueCheck()
+    {
         if (!DialogueManager.instance.isInDialogue)
         {
 
             if (isCollision && Input.GetKeyDown(KeyCode.Z))
             {
-                if(!PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
+                if (!PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
                 {
                     DialogueManager.instance.StartDialogue("chapter1.bird01");
 
                     imageChild.gameObject.SetActive(false);
                     textChild.gameObject.SetActive(false);
-             
+
                 }
-                else if(PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
+
+                if (PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
                 {
-                    DialogueManager.instance.StartDialogue("chapter1.bird02");
-                    imageChild.gameObject.SetActive(false);
-                    textChild.gameObject.SetActive(false);
+                    if (ItemManager.instance.FindItem("Creeper"))
+                    {
+                        DialogueManager.instance.StartDialogue("questComplete");
+                        ItemManager.instance.RemoveItem("Creeper");
+                        imageChild.gameObject.SetActive(false);
+                        textChild.gameObject.SetActive(false);
+
+                    }
+                    else if(!PlayerInfoManager.instance.GetProgress("questComplete"))
+                    {
+                        DialogueManager.instance.StartDialogue("chapter1.bird02");
+                        imageChild.gameObject.SetActive(false);
+                        textChild.gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -46,11 +63,9 @@ public class Bird : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 DialogueManager.instance.NextDialogue();
-            }  
+            }
         }
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
