@@ -228,7 +228,7 @@ public class ItemManager : MonoBehaviour
       
     }
 
-    private void RemoveItem(string id)
+    public void RemoveItem(string id)
     {
         Item removeItem = myItemList.Find(item => item.id == id);
 
@@ -248,6 +248,20 @@ public class ItemManager : MonoBehaviour
             Debug.Log("Item doesn't exist So it can't remove item");
         }
 
+    }
+
+    public bool FindItem(string id)
+    {
+        Item findItem = myItemList.Find(item => item.id == id);
+        
+        if(findItem != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void ClearMyItemList()

@@ -179,7 +179,14 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "why?", 3, false));
 
         allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "find branch", 0, false));
+
+        allDialogueList.Add(new Dialogue("questComplete", "bird", "thank you", 0, false));
         #endregion
+
+        #region BIRD
+
+        #endregion
+
     }
 
 
