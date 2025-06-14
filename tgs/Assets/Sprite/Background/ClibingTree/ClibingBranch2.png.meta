@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c8ecf1953bbe6cc43a2e5a160d29518f
+guid: ec4a8a59864ee6646a0229d3e8d3009e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6853316077166303748
-    second: Tree_0
+      213: 6923801617310773056
+    second: ClibingBranch2_0
+  - first:
+      213: -959012184173915735
+    second: ClibingBranch2_1
+  - first:
+      213: -1823245493502520832
+    second: ClibingBranch2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree_0
+      name: ClibingBranch2_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 93
-        width: 2317
-        height: 2753
+        x: 101
+        y: 48
+        width: 546
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40a98f869aedb1f50800000000000000
-      internalID: 6853316077166303748
+      spriteID: 04f651713e8461060800000000000000
+      internalID: 6923801617310773056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClibingBranch2_1
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 267
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1da03ef77e0b2f0800000000000000
+      internalID: -959012184173915735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClibingBranch2_2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 177
+        width: 58
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002537532e782b6e0800000000000000
+      internalID: -1823245493502520832
       vertices: []
       indices: 
       edges: []
