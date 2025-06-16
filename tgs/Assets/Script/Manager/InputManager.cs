@@ -8,10 +8,9 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         // Singleton Setting
-        if (instance = null)
+        if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,7 +27,11 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("ESC Å° ´­¸²");
+            Application.Quit();
+        }
     }
 
     void CheckInventory()

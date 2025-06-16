@@ -43,10 +43,6 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
 
-        SettingItemData();
-        UpdateItemImages();
-        UpdateItemDescription();
-
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -55,7 +51,10 @@ public class ItemManager : MonoBehaviour
 
         instance = this;
 
-        //Test
+        SettingItemData();
+        UpdateItemImages();
+        UpdateItemDescription();
+
         ClearMyItemList();
     }
 

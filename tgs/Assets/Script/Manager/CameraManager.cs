@@ -33,21 +33,26 @@ public class CameraManager : MonoBehaviour
     {
 
         if (DialogueManager.instance != null && DialogueManager.instance.isInDialogue)
-            return;
+        {
+    
+            var currentDialogue = DialogueManager.instance.CurrentDialogue;
+            if (currentDialogue != null)
+            {
+          
+                Speeker speekerData = DialogueManager.instance.allSpeekerList.Find(s => s.name == currentDialogue.character);
+                if (speekerData != null && speekerData.character != null)
+                {
+                    Vector3 targetPos = speekerData.character.transform.position;
+                    targetPos.z = -10f;
+                    transform.position = Vector3.Lerp(transform.position, targetPos, 2f * Time.deltaTime);
+                    return; 
+                }
+            }
+        }
 
-        Vector3 targetPos = new Vector3(playerTransform.position.x, playerTransform.position.y, -10f);
-        transform.position = Vector3.Lerp(transform.position, targetPos, 2f * Time.deltaTime);
-
-
-        //Test
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    FadeOut();
-        //}
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-        //    FadeIn();
-        //}
+        Vector3 playerPos = playerTransform.position;
+        Vector3 newPlayerCameraPos = new Vector3(playerPos.x, playerPos.y + 2.5f, -10f);
+        transform.position = Vector3.Lerp(transform.position, newPlayerCameraPos, 2f * Time.deltaTime);
     }
 
     //Black -> Clear

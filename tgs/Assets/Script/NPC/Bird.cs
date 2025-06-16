@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Bird : MonoBehaviour
 {
@@ -49,13 +48,19 @@ public class Bird : MonoBehaviour
                         textChild.gameObject.SetActive(false);
 
                     }
-                    else if(!PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
+                    else if (!PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
                     {
                         DialogueManager.instance.StartDialogue("chapter1.bird02");
                         imageChild.gameObject.SetActive(false);
                         textChild.gameObject.SetActive(false);
                     }
                 }
+
+                if (PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
+                {
+                    DialogueManager.instance.StartDialogue("chapter1.bird04");
+                }
+
             }
         }
         else

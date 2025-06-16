@@ -7,6 +7,8 @@ using System.Text;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using Febucci.UI;
+
 
 [System.Serializable]
 public class Dialogue
@@ -51,7 +53,22 @@ public class DialogueManager : MonoBehaviour
     private List<Dialogue> currentChapterDialogueList = new List<Dialogue>();
     private int chapterIndex = 0;
 
+    private TypewriterByCharacter typewriter;
+    private bool isTypingFinished = false;
+
+    private Transform currentSpeakerTransform;
+
     public bool isInDialogue { get; private set; } = false;
+
+    public Dialogue CurrentDialogue
+    {
+        get
+        {
+            if (chapterIndex == 0 || chapterIndex > currentChapterDialogueList.Count)
+                return null;
+            return currentChapterDialogueList[chapterIndex - 1];
+        }
+    }
 
     private void Awake()
     {
@@ -75,6 +92,17 @@ public class DialogueManager : MonoBehaviour
         // TestCode
         //StartDialogue("bird");
 
+        typewriter = dialogueText.GetComponent<TypewriterByCharacter>();
+        if (typewriter != null)
+        {
+            typewriter.onTextShowed.AddListener(OnTypingFinished);
+        }
+
+    }
+
+    private void OnTypingFinished()
+    {
+        isTypingFinished = true;
     }
 
     private void Update()
@@ -86,6 +114,16 @@ public class DialogueManager : MonoBehaviour
         //}
     }
 
+    private void LateUpdate()
+    {
+        if (isInDialogue && currentSpeakerTransform != null)
+        {
+            Vector3 worldPos = currentSpeakerTransform.position + new Vector3(0f, 2.5f, 0f);
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+            dialogueObject.transform.position = screenPos;
+        }
+    }
+
     // Input chapter name to argument, Start this chapter's dialogue
     public void StartDialogue(string chapter)
     {
@@ -93,6 +131,7 @@ public class DialogueManager : MonoBehaviour
         FilterDialogueByChapter(chapter);
         dialogueObject.SetActive(true);
         chapterIndex = 0;
+        isTypingFinished = true;
         NextDialogue();
     }
 
@@ -100,40 +139,23 @@ public class DialogueManager : MonoBehaviour
     {
         isInDialogue = false;
         dialogueObject.SetActive(false);
+        currentSpeakerTransform = null;
 
         // Save Progress
         PlayerInfoManager.instance.SetProgress(currentChapter, true);
     }
 
-    //IEnumerator TypingEffect(TextMeshProUGUI targetText, string text)
-    //{
-    //    targetText.text = string.Empty;
-    //    StringBuilder stringBuilder = new StringBuilder();
-
-    //    for (int i = 0; i < text.Length; i++)
-    //    {
-    //        stringBuilder.Append(text[i]);
-    //        targetText.text = stringBuilder.ToString();
-    //        yield return new WaitForSeconds(0.05f);
-    //    }
-
-    //    var current = currentChapterDialogueList[chapterIndex - 1];
-    //    current.isDone = true;
-    //}
-    
     // Find character who is speaking, Locate speech bubble
     private void SetDialoguelocation(Dialogue currentDialogue)
     {
         Speeker speekerData = allSpeekerList.Find(data => data.name == currentDialogue.character);
         if (speekerData == null || speekerData.character == null)
         {
-            Debug.Log("Can't find speeker : " + currentDialogue.character);
+            Debug.Log("Can't find speaker: " + currentDialogue.character);
             return;
         }
 
-        Vector3 speakerWorldPosition = speekerData.character.transform.position + new Vector3(0f, 2.5f, 0f);
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(speakerWorldPosition);
-        dialogueObject.transform.position = screenPosition;
+        currentSpeakerTransform = speekerData.character.transform;
     }
 
 
@@ -149,21 +171,27 @@ public class DialogueManager : MonoBehaviour
 
     public void NextDialogue()
     {
+        if (!isTypingFinished)
+        {
+            return;
+
+        }
+
         if (chapterIndex >= currentChapterDialogueList.Count)
         {
             EndDialogue();
             return;
         }
 
+        dialogueText.text = "";
+
         Dialogue currentDialogue = currentChapterDialogueList[chapterIndex];
 
         SetDialoguelocation(currentDialogue);
 
-        StopAllCoroutines();
-        //StartCoroutine(TypingEffect(dialogueText, currentDialogue.dialogueText));
+        isTypingFinished = false;
         dialogueText.text = currentDialogue.dialogueText;
         currentDialogue.isDone = true;
-
         chapterIndex++;
     }
 
@@ -200,8 +228,7 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "じゃーー", 1, false));
         allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "この道進めば、他にも家まで案内してくれる動物がいるよ", 2, false));
         allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "笑", 3, false));
-        allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "・・・（こんなことで助かるのかな？）", 4, false));
-        allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "<swing>（こんなことで助かるのかな？）", 5, false));
+        allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "<swing>（こんなことで助かるのかな？）", 4, false));
 
         allDialogueList.Add(new Dialogue("chapter1.bird04", "bird", "なに？", 0, false));
         #endregion
