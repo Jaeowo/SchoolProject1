@@ -174,7 +174,6 @@ public class DialogueManager : MonoBehaviour
         if (!isTypingFinished)
         {
             return;
-
         }
 
         if (chapterIndex >= currentChapterDialogueList.Count)
@@ -186,11 +185,14 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
 
         Dialogue currentDialogue = currentChapterDialogueList[chapterIndex];
-
         SetDialoguelocation(currentDialogue);
 
         isTypingFinished = false;
-        dialogueText.text = currentDialogue.dialogueText;
+
+        dialogueText.text = "";
+        dialogueText.ForceMeshUpdate();
+
+        typewriter.ShowText(currentDialogue.dialogueText);
         currentDialogue.isDone = true;
         chapterIndex++;
     }
