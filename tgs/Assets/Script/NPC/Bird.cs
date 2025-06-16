@@ -41,15 +41,15 @@ public class Bird : MonoBehaviour
 
                 if (PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
                 {
-                    if (ItemManager.instance.FindItem("Creeper"))
+                    if (ItemManager.instance.FindItem("Branch"))
                     {
-                        DialogueManager.instance.StartDialogue("questComplete");
-                        ItemManager.instance.RemoveItem("Creeper");
+                        DialogueManager.instance.StartDialogue("chapter1.bird03");
+                        ItemManager.instance.RemoveItem("Branch");
                         imageChild.gameObject.SetActive(false);
                         textChild.gameObject.SetActive(false);
 
                     }
-                    else if(!PlayerInfoManager.instance.GetProgress("questComplete"))
+                    else if(!PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
                     {
                         DialogueManager.instance.StartDialogue("chapter1.bird02");
                         imageChild.gameObject.SetActive(false);

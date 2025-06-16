@@ -147,10 +147,10 @@ TextureImporter:
       name: grasses_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 70
-        width: 85
-        height: 109
+        x: 0
+        y: 0
+        width: 200
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: grasses_1
       rect:
         serializedVersion: 2
-        x: 309
-        y: 64
-        width: 39
-        height: 25
+        x: 200
+        y: 0
+        width: 200
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: grasses_2
       rect:
         serializedVersion: 2
-        x: 312
-        y: 69
-        width: 63
-        height: 125
+        x: 400
+        y: 0
+        width: 200
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +213,10 @@ TextureImporter:
       name: grasses_3
       rect:
         serializedVersion: 2
-        x: 493
-        y: 60
-        width: 48
-        height: 119
+        x: 600
+        y: 0
+        width: 200
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: grasses_4
       rect:
         serializedVersion: 2
-        x: 641
-        y: 60
-        width: 112
-        height: 75
+        x: 800
+        y: 0
+        width: 200
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,55 +253,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: grasses_5
-      rect:
-        serializedVersion: 2
-        x: 865
-        y: 56
-        width: 61
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eaf908aca7a261cc0800000000000000
-      internalID: -3740755733612814418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grasses_6
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 56
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 244ecca0504412e50800000000000000
-      internalID: 6782777302243402818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5024d326710256e4090423ce0ae39b10
     internalID: 0
     vertices: []
     indices: 
@@ -310,7 +266,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grasses_0: -825278261400980603
+      grasses_1: -5818671982968372919
+      grasses_2: -8240526524855084448
+      grasses_3: 7585905864178064284
+      grasses_4: -7255409430814330434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

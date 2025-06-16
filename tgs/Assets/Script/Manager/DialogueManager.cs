@@ -173,18 +173,17 @@ public class DialogueManager : MonoBehaviour
 
         //Test
         #region TestDialogue
-        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "<wave>Butterfly!", 0, false));
-        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "hey", 1, false));
-        allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "nezumi!", 2, false));
-        allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "why?", 3, false));
+        //allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "<wave>Butterfly!", 0, false));
+        //allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "hey", 1, false));
+        //allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "nezumi!", 2, false));
+        //allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "why?", 3, false));
 
-        allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "find branch", 0, false));
+        //allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "find branch", 0, false));
 
-        allDialogueList.Add(new Dialogue("questComplete", "bird", "thank you", 0, false));
+        //allDialogueList.Add(new Dialogue("questComplete", "bird", "thank you", 0, false));
         #endregion
 
         #region Chapter 1: Bird
-        //allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "<wave>Butterfly!", 0, false));
         //allDialogueList.Add(new Dialogue("hey", "bird", "<wave>やあ！ネズミちゃん！", 0, false));
 
         allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "ここで君を見るのは初めてだね。迷子かな？", 0, false));
@@ -203,6 +202,8 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter1.bird03", "bird", "笑", 3, false));
         allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "・・・（こんなことで助かるのかな？）", 4, false));
         allDialogueList.Add(new Dialogue("chapter1.bird03", "nezumi", "<swing>（こんなことで助かるのかな？）", 5, false));
+
+        allDialogueList.Add(new Dialogue("chapter1.bird04", "bird", "なに？", 0, false));
         #endregion
 
         #region Chapter 2: Capy
@@ -225,10 +226,6 @@ public class DialogueManager : MonoBehaviour
         #endregion
 
         #region Chapter 3: Kuma
-
-        #endregion
-
-        #region BIRD
 
         #endregion
 

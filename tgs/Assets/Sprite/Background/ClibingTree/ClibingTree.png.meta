@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ClibingTree_0: 8281740955817078773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

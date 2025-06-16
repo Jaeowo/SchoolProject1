@@ -1,0 +1,5 @@
+Yuzu	ゆず	カピバラが欲しいかったゆず	FALSE
+HoneyComb	ハチの巣	ハチミツがいっぱい！	FALSE
+Branch	枝	鳥の巣を作ろう	FALSE
+Honey	ハチミツ	甘いにおい	FALSE
+Ticket	チケット	ボートに乗るためのチケット	FALSE
