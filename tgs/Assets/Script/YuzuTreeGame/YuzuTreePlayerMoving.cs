@@ -36,7 +36,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             transform.rotation = Quaternion.Euler(leftSide);
             startPos = transform.position;
             endPos = startPos + new Vector3(-7, 0, 0);
-            StartCoroutine("BulletMove");
+            StartCoroutine("NezuParabolaMove");
         }
 
         // Left -> Right
@@ -45,7 +45,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             transform.rotation = Quaternion.Euler(rightSide);
             startPos = transform.position;
             endPos = startPos + new Vector3(7, 0, 0);
-            StartCoroutine("BulletMove");
+            StartCoroutine("NezuParabolaMove");
         }
 
         // Left -> Left
@@ -70,7 +70,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         return new Vector3(mid.x, f(t) + Mathf.Lerp(start.y, end.y, t), mid.z);
     }
 
-    protected IEnumerator BulletMove()
+    protected IEnumerator NezuParabolaMove()
     {
         isGround = false;
         timer = 0;
