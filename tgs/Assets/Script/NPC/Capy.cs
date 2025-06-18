@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class Capy : MonoBehaviour
 {
     private bool isCollision = false;
 
@@ -15,7 +15,6 @@ public class Bird : MonoBehaviour
         ChildActiveToFalse();
     }
 
-    // Update is called once per frame
     void Update()
     {
         DialogueCheck();
@@ -34,33 +33,15 @@ public class Bird : MonoBehaviour
 
             if (isCollision && Input.GetKeyDown(KeyCode.Z))
             {
-                if (!PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
+                if (!PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
                 {
-                    DialogueManager.instance.StartDialogue("chapter1.bird01");
-
+                    DialogueManager.instance.StartDialogue("chapter2.capy01");
                     ChildActiveToFalse();
-
                 }
-
-                if (PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
+                else if (!PlayerInfoManager.instance.GetProgress("chapter2.capy02"))
                 {
-                    if (ItemManager.instance.FindItem("Branch"))
-                    {
-                        DialogueManager.instance.StartDialogue("chapter1.bird03");
-                        ItemManager.instance.RemoveItem("Branch");
-                        ChildActiveToFalse();
-
-                    }
-                    else if (!PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
-                    {
-                        DialogueManager.instance.StartDialogue("chapter1.bird02");
-                        ChildActiveToFalse();
-                    }
-                }
-
-                if (PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
-                {
-                    DialogueManager.instance.StartDialogue("chapter1.bird04");
+                    DialogueManager.instance.StartDialogue("chapter2.capy02");
+                    ChildActiveToFalse();
                 }
 
             }
@@ -79,8 +60,17 @@ public class Bird : MonoBehaviour
         {
             isCollision = true;
 
-            imageChild.gameObject.SetActive(true);
-            textChild.gameObject.SetActive(true);
+            if (!PlayerInfoManager.instance.GetProgress("chapter2.capy00"))
+            {
+                DialogueManager.instance.StartDialogue("chapter2.capy00");
+            }
+            else
+            {
+                imageChild.gameObject.SetActive(true);
+                textChild.gameObject.SetActive(true);
+            }
+
+
         }
     }
 

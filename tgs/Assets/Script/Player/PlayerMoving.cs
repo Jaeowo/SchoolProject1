@@ -18,14 +18,18 @@ public class PlayerMoving : MonoBehaviour
     void Update()
     {
         if (!ItemManager.instance.GetIsInventoryOpend()
-          && !DialogueManager.instance.isInDialogue)
+             && !DialogueManager.instance.isInDialogue)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput.Normalize();
             Rotate();
         }
-        
+        else
+        {
+            moveInput = Vector2.zero;
+        }
+
     }
 
     private void FixedUpdate()
