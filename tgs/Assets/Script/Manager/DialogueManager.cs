@@ -36,6 +36,7 @@ public class Speeker
 {
     public string name;
     public GameObject character;
+    public Transform balloonAnchor;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -155,7 +156,14 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        currentSpeakerTransform = speekerData.character.transform;
+        if (speekerData.balloonAnchor != null)
+        {
+            currentSpeakerTransform = speekerData.balloonAnchor;
+        }
+        else
+        {
+            currentSpeakerTransform = speekerData.character.transform;
+        }
     }
 
 
@@ -251,7 +259,9 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter2.capy01", "capy", "甘いゆずくれたら、その家に入るひみつを教えてあげるかな～", 10, false));
         allDialogueList.Add(new Dialogue("chapter2.capy01", "nezumi", "ゆずか〜。さがしてみよっかな。）", 11, false));
 
-        allDialogueList.Add(new Dialogue("chapter2.capy02", "capy", "<swing>甘いゆずほしいな～", 0, false)); //capy dialogue if quest is not done yet
+        allDialogueList.Add(new Dialogue("chapter2.capy02", "capy", "ゆずのきを探して〜", 0, false));
+
+        allDialogueList.Add(new Dialogue("chapter2.capy03", "capy", "<swing>甘いゆずほしいな～", 0, false)); //capy dialogue if quest is not done yet
         #endregion
 
         #region Chapter 3: Kuma

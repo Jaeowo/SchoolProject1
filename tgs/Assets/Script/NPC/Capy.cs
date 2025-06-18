@@ -7,6 +7,9 @@ public class Capy : MonoBehaviour
     private Transform imageChild;
     private Transform textChild;
 
+    private float inputCooldown = 0.5f;
+    private float inputCooldownTimer = 0f;
+
     private void Awake()
     {
         imageChild = transform.GetChild(0);
@@ -17,7 +20,27 @@ public class Capy : MonoBehaviour
 
     void Update()
     {
-        DialogueCheck();
+
+        if (PlayerInfoManager.instance.GetProgress("chapter2.capy00"))
+        {
+            if (inputCooldownTimer > 0)
+            {
+                inputCooldownTimer -= Time.deltaTime;
+
+                if (inputCooldownTimer <= 0f)  
+                {
+                    inputCooldownTimer = 0f;
+
+                    if (isCollision)
+                    {
+                        imageChild.gameObject.SetActive(true);
+                        textChild.gameObject.SetActive(true);
+                    }
+                }
+                return;
+            }
+            DialogueCheck();
+        }
     }
 
     private void ChildActiveToFalse()
@@ -38,10 +61,23 @@ public class Capy : MonoBehaviour
                     DialogueManager.instance.StartDialogue("chapter2.capy01");
                     ChildActiveToFalse();
                 }
-                else if (!PlayerInfoManager.instance.GetProgress("chapter2.capy02"))
+
+                if (PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
                 {
-                    DialogueManager.instance.StartDialogue("chapter2.capy02");
-                    ChildActiveToFalse();
+                    if (ItemManager.instance.FindItem("Yuzu"))
+                    {
+                        DialogueManager.instance.StartDialogue("chapter2.capy03");
+                        ItemManager.instance.RemoveItem("Yuzu");
+                        ChildActiveToFalse();
+
+                    }
+                    else if (!PlayerInfoManager.instance.GetProgress("chapter2.capy03"))
+                    {
+                        //DialogueManager.instance.StartDialogue("chapter2.capy02");
+                        //ChildActiveToFalse();
+
+
+                    }
                 }
 
             }
@@ -59,6 +95,7 @@ public class Capy : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isCollision = true;
+            inputCooldownTimer = inputCooldown;
 
             if (!PlayerInfoManager.instance.GetProgress("chapter2.capy00"))
             {

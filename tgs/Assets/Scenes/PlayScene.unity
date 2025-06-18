@@ -1295,7 +1295,7 @@ Transform:
   m_GameObject: {fileID: 466727666}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.59, y: 4.59, z: 0.10385251}
+  m_LocalPosition: {x: 76.6, y: 1.9, z: 0.10385251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3289,6 +3289,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3255825, y: 3.4888353}
   m_EdgeRadius: 0
+--- !u!1 &1024381103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024381104}
+  m_Layer: 0
+  m_Name: balloonAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1024381104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024381103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1895668961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046468567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4874,10 +4905,13 @@ MonoBehaviour:
   allSpeekerList:
   - name: nezumi
     character: {fileID: 71637627}
+    balloonAnchor: {fileID: 0}
   - name: bird
     character: {fileID: 1046468567}
+    balloonAnchor: {fileID: 0}
   - name: capy
     character: {fileID: 1895668957}
+    balloonAnchor: {fileID: 1024381104}
 --- !u!4 &1698486065
 Transform:
   m_ObjectHideFlags: 0
@@ -5331,7 +5365,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.8252616, y: 1.7056713}
+  m_Offset: {x: -1.3145218, y: 0.36667323}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5341,7 +5375,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 15.360522, y: 12.734518}
+  m_Size: {x: 12.339043, y: 10.056522}
   m_EdgeRadius: 0
 --- !u!212 &1895668960
 SpriteRenderer:
@@ -5407,12 +5441,13 @@ Transform:
   m_GameObject: {fileID: 1895668957}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 96.4, y: -5.8, z: 1.1636554}
+  m_LocalPosition: {x: 96.99, y: -5.93, z: 1.1636554}
   m_LocalScale: {x: 0.688503, y: 0.8, z: 1.1482705}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 885529045}
   - {fileID: 1978413182}
+  - {fileID: 1024381104}
   m_Father: {fileID: 723753531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1895668962
