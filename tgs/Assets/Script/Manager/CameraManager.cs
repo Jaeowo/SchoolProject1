@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CameraManager : MonoBehaviour
 {
@@ -26,33 +27,48 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
-        playerTransform = player.transform;
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+        {
+            playerTransform = player.transform;
+        }
+  
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
-
-        if (DialogueManager.instance != null && DialogueManager.instance.isInDialogue)
+        if(SceneManager.GetActiveScene().name == "PlayScene")
         {
-    
-            var currentDialogue = DialogueManager.instance.CurrentDialogue;
-            if (currentDialogue != null)
+            if (DialogueManager.instance != null && DialogueManager.instance.isInDialogue)
             {
-          
-                Speeker speekerData = DialogueManager.instance.allSpeekerList.Find(s => s.name == currentDialogue.character);
-                if (speekerData != null && speekerData.character != null)
+
+                var currentDialogue = DialogueManager.instance.CurrentDialogue;
+                if (currentDialogue != null)
                 {
-                    Vector3 targetPos = speekerData.character.transform.position;
-                    targetPos.z = -10f;
-                    transform.position = Vector3.Lerp(transform.position, targetPos, 2f * Time.deltaTime);
-                    return; 
+
+                    Speeker speekerData = DialogueManager.instance.allSpeekerList.Find(s => s.name == currentDialogue.character);
+                    if (speekerData != null && speekerData.character != null)
+                    {
+                        Vector3 targetPos = speekerData.character.transform.position;
+                        targetPos.z = -10f;
+                        transform.position = Vector3.Lerp(transform.position, targetPos, 2f * Time.deltaTime);
+                        return;
+                    }
                 }
             }
+
+            Vector3 playerPos = playerTransform.position;
+            Vector3 newPlayerCameraPos = new Vector3(playerPos.x, playerPos.y + 2.5f, -10f);
+            transform.position = Vector3.Lerp(transform.position, newPlayerCameraPos, 2f * Time.deltaTime);
         }
 
-        Vector3 playerPos = playerTransform.position;
-        Vector3 newPlayerCameraPos = new Vector3(playerPos.x, playerPos.y + 2.5f, -10f);
-        transform.position = Vector3.Lerp(transform.position, newPlayerCameraPos, 2f * Time.deltaTime);
+        if (SceneManager.GetActiveScene().name == "YuzuTreeScene")
+        {
+
+        }
+
+
+
     }
 
     //Black -> Clear

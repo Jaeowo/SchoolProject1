@@ -8,6 +8,10 @@ public class YuzuTree : MonoBehaviour
     private Transform imageChild;
     private Transform textChild;
 
+    private const float sceneChangeTime = 1.0f;
+    private float timer = 0.0f;
+    private bool timerTrigger = false;
+
     void Start()
     {
         imageChild = transform.GetChild(0);
@@ -18,7 +22,19 @@ public class YuzuTree : MonoBehaviour
 
     void Update()
     {
+        if (timerTrigger)
+        {
+            timer += Time.deltaTime;
+        }
+
         if (isCollision && Input.GetKeyDown(KeyCode.Z))
+        {
+            timerTrigger = true;
+            CameraManager.instance.FadeOut();
+
+        }
+
+        if (timer >= sceneChangeTime)
         {
             SceneManager.LoadScene("YuzuTreeScene");
         }
