@@ -54,7 +54,7 @@ public class Capy : MonoBehaviour
         if (!DialogueManager.instance.isInDialogue)
         {
 
-            if (isCollision && Input.GetKeyDown(KeyCode.Z))
+            if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
             {
                 if (!PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
                 {
@@ -84,7 +84,7 @@ public class Capy : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1))
             {
                 DialogueManager.instance.NextDialogue();
             }

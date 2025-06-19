@@ -32,7 +32,7 @@ public class CameraManager : MonoBehaviour
             playerTransform = player.transform;
         }
   
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -62,15 +62,15 @@ public class CameraManager : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, newPlayerCameraPos, 2f * Time.deltaTime);
         }
 
-        if (SceneManager.GetActiveScene().name == "YuzuTreeScene")
-        { 
-            Vector3 playerPos = player.transform.position;
+        //if (SceneManager.GetActiveScene().name == "YuzuTreeScene")
+        //{ 
+        //    Vector3 playerPos = player.transform.position;
 
-            float fixedX = 0f; 
-            Vector3 cameraTargetPos = new Vector3(fixedX, playerPos.y + 2.5f, -10f);
+        //    float fixedX = 0f; 
+        //    Vector3 cameraTargetPos = new Vector3(fixedX, playerPos.y + 2.5f, -10f);
 
-            transform.position = Vector3.Lerp(transform.position, cameraTargetPos, 2f * Time.deltaTime);
-        }
+        //    transform.position = Vector3.Lerp(transform.position, cameraTargetPos, 2f * Time.deltaTime);
+        //}
 
 
 

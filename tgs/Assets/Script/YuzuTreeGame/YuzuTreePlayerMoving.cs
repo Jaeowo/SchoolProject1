@@ -30,7 +30,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
     {
 
         // Right -> Left
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton2))
         {
 
             transform.rotation = Quaternion.Euler(leftSide);
@@ -40,7 +40,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         }
 
         // Left -> Right
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
             transform.rotation = Quaternion.Euler(rightSide);
             startPos = transform.position;

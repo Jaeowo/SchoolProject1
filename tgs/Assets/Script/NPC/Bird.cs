@@ -32,7 +32,7 @@ public class Bird : MonoBehaviour
         if (!DialogueManager.instance.isInDialogue)
         {
 
-            if (isCollision && Input.GetKeyDown(KeyCode.Z))
+            if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
             {
                 if (!PlayerInfoManager.instance.GetProgress("chapter1.bird01"))
                 {
@@ -67,11 +67,13 @@ public class Bird : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1))
             {
                 DialogueManager.instance.NextDialogue();
             }
+
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

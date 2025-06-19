@@ -20,7 +20,7 @@ public class FieldItem : MonoBehaviour
     }
     private void Update()
     {
-        if(isCollision && Input.GetKeyDown(KeyCode.Z))
+        if(isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
         {
             ItemManager.instance.GetItem(itemID);
             Destroy(gameObject);

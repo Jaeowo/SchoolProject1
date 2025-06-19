@@ -27,7 +27,7 @@ public class YuzuTree : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (isCollision && Input.GetKeyDown(KeyCode.Z))
+        if (isCollision && (Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.JoystickButton1)))
         {
             timerTrigger = true;
             CameraManager.instance.FadeOut();

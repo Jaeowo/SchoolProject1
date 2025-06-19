@@ -60,12 +60,20 @@ public class ItemManager : MonoBehaviour
 
     private void Update()
     {
+        float dpadX = Input.GetAxisRaw("DPad_Horizontal");
+        float dpadY = Input.GetAxisRaw("DPad_Vertical");
+
+        //if (dpadX > 0) Debug.Log("DPad Right");
+        //else if (dpadX < 0) Debug.Log("DPad Left");
+
+        //if (dpadY > 0) Debug.Log("DPad Up");
+        //else if (dpadY < 0) Debug.Log("DPad Down");
 
         // Test Code
         int currentSelected = myItemList.FindIndex(item => item.isUsing);
 
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) || dpadX < 0)
         {
             inventory.SetActive(true);
             if (myItemList != null)
@@ -75,18 +83,18 @@ public class ItemManager : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Q)|| dpadX > 0)
         {
             isInventoryOpend = false;
             inventory.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || dpadY > 0)
         {
             int nextIndex = Mathf.Max(0, currentSelected - 1);
             slotSelected(nextIndex);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || dpadY < 0)
         {
             int nextIndex = Mathf.Min(myItemList.Count - 1, currentSelected + 1);
             slotSelected(nextIndex);
