@@ -5,6 +5,7 @@ using System.IO;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Item
@@ -46,7 +47,7 @@ public class ItemManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -59,7 +60,9 @@ public class ItemManager : MonoBehaviour
         UpdateItemImages();
         UpdateItemDescription();
 
-        ClearMyItemList();
+
+ 
+
     }
 
     private void Update()
@@ -104,6 +107,12 @@ public class ItemManager : MonoBehaviour
             slotSelected(nextIndex);
         }
 
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ClearMyItemList();
+        }
         // get & remove test
 
         //if(Input.GetKeyDown(KeyCode.Z))

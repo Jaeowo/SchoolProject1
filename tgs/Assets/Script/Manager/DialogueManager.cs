@@ -262,6 +262,8 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter2.capy02", "capy", "ゆずのきを探して〜", 0, false));
 
         allDialogueList.Add(new Dialogue("chapter2.capy03", "capy", "<swing>甘いゆずほしいな～", 0, false)); //capy dialogue if quest is not done yet
+
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "ゆずありがとう！", 0, false));
         #endregion
 
         #region Chapter 3: Kuma

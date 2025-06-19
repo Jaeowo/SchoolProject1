@@ -33,28 +33,31 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton2))
+        if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
         {
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton2))
+            {
 
-            transform.rotation = Quaternion.Euler(leftSide);
-            startPos = transform.position;
-            endPos = startPos + new Vector3(-7, 0, 0);
-            StartCoroutine("NezuParabolaMove");
-        }
+                transform.rotation = Quaternion.Euler(leftSide);
+                startPos = transform.position;
+                endPos = startPos + new Vector3(-7, 0, 0);
+                StartCoroutine("NezuParabolaMove");
+            }
 
-        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.JoystickButton1))
-        {
-            transform.rotation = Quaternion.Euler(rightSide);
-            startPos = transform.position;
-            endPos = startPos + new Vector3(7, 0, 0);
-            StartCoroutine("NezuParabolaMove");
-        }
+            if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.JoystickButton1))
+            {
+                transform.rotation = Quaternion.Euler(rightSide);
+                startPos = transform.position;
+                endPos = startPos + new Vector3(7, 0, 0);
+                StartCoroutine("NezuParabolaMove");
+            }
 
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.JoystickButton3))
-        {
-            startPos = transform.position;
-            endPos = startPos + new Vector3(0, 2, 0);
-            StartCoroutine("NezuParabolaMove");
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.JoystickButton3))
+            {
+                startPos = transform.position;
+                endPos = startPos + new Vector3(0, 2, 0);
+                StartCoroutine("NezuParabolaMove");
+            }
         }
     }
 

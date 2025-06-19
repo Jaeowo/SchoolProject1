@@ -62,23 +62,27 @@ public class Capy : MonoBehaviour
                     ChildActiveToFalse();
                 }
 
-                if (PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
+
+                if (PlayerInfoManager.instance.GetProgress("chapter2.capy01") && ItemManager.instance.FindItem("Yuzu"))
                 {
-                    if (ItemManager.instance.FindItem("Yuzu"))
-                    {
-                        DialogueManager.instance.StartDialogue("chapter2.capy03");
-                        ItemManager.instance.RemoveItem("Yuzu");
-                        ChildActiveToFalse();
-
-                    }
-                    else if (!PlayerInfoManager.instance.GetProgress("chapter2.capy03"))
-                    {
-                        //DialogueManager.instance.StartDialogue("chapter2.capy02");
-                        //ChildActiveToFalse();
-
-
-                    }
+                    DialogueManager.instance.StartDialogue("chapter2.capy04");
+                    ItemManager.instance.RemoveItem("Yuzu");
+                    ChildActiveToFalse();
                 }
+
+
+                //    if (PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
+                //{
+                  
+                //    }
+                //    else if (!PlayerInfoManager.instance.GetProgress("chapter2.capy03"))
+                //    {
+                //        //DialogueManager.instance.StartDialogue("chapter2.capy02");
+                //        //ChildActiveToFalse();
+
+
+                //    }
+                //}
 
             }
         }

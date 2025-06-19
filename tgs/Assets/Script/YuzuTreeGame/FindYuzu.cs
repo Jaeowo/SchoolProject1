@@ -9,11 +9,13 @@ public class FindYuzu : MonoBehaviour
     public GameObject messageBubble;
 
     private bool isColliding = false;
+    private bool hasSceneReturned = false; 
 
     private void Update()
     {
-        if (PlayerInfoManager.instance.GetProgress("FindYuzu"))
+        if (!hasSceneReturned && PlayerInfoManager.instance.GetProgress("FindYuzu"))
         {
+            hasSceneReturned = true; 
             StartCoroutine(DelayBackPlayScene());
         }
     }
@@ -23,23 +25,29 @@ public class FindYuzu : MonoBehaviour
         if (!isColliding && collision.gameObject == yuzu)
         {
             isColliding = true;
+            PlayerInfoManager.instance.SetProgress("FindYuzu", true);
             StartCoroutine(DelayedReaction());
         }
     }
 
     private IEnumerator DelayedReaction()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("FindYuzu!!!!!!");
-        messageBubble.SetActive(true);
-        PlayerInfoManager.instance.SetProgress("FindYuzu", true);
+        if (messageBubble != null)
+        {
+            Vector3 newPos = transform.position + new Vector3(0, 2, 0);
+            messageBubble.transform.position = newPos;
+
+            messageBubble.SetActive(true);
+        }
 
         isColliding = false;
     }
 
     private IEnumerator DelayBackPlayScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f); 
         SceneManager.LoadScene("PlayScene");
     }
 }
