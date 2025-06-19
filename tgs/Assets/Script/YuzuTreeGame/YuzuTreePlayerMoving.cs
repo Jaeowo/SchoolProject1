@@ -28,8 +28,11 @@ public class YuzuTreePlayerMoving : MonoBehaviour
 
     void Update()
     {
+        if (!isGround)
+        {
+            return;
+        }
 
-        // Right -> Left
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton2))
         {
 
@@ -39,7 +42,6 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             StartCoroutine("NezuParabolaMove");
         }
 
-        // Left -> Right
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
             transform.rotation = Quaternion.Euler(rightSide);
@@ -51,7 +53,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.JoystickButton3))
         {
             startPos = transform.position;
-            endPos = startPos + new Vector3(0, 6, 0);
+            endPos = startPos + new Vector3(0, 2, 0);
             StartCoroutine("NezuParabolaMove");
         }
     }
@@ -76,15 +78,26 @@ public class YuzuTreePlayerMoving : MonoBehaviour
     {
         isGround = false;
         timer = 0;
-        while (transform.position.y >= startPos.y)
+        float duration = 0.5f;
+
+        while (timer < duration)
         {
             timer += Time.deltaTime;
-            Vector3 tempPos = Parabola(startPos, endPos, 4, timer);
-            rb.MovePosition(tempPos);
-            yield return new WaitForEndOfFrame();
+            float t = Mathf.Clamp01(timer / duration);
+            Vector3 targetPos = Parabola(startPos, endPos, 4, t);
+            rb.MovePosition(targetPos);
+            yield return null;
         }
 
-       
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+    
+        if (collision.gameObject.CompareTag("Branch"))
+        {
+            isGround = true;
+        }
     }
 
 }
