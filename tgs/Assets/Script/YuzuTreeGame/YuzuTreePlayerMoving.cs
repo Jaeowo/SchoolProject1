@@ -48,10 +48,12 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             StartCoroutine("NezuParabolaMove");
         }
 
-        // Left -> Left
-
-
-        // Right -> Right
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.JoystickButton3))
+        {
+            startPos = transform.position;
+            endPos = startPos + new Vector3(0, 6, 0);
+            StartCoroutine("NezuParabolaMove");
+        }
     }
 
     private void FixedUpdate()
