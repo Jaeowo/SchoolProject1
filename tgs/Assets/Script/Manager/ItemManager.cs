@@ -43,10 +43,14 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
 
-        if (instance != null && instance != this)
+        if (instance == null)
         {
-            Destroy(gameObject);
-            return;
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); 
         }
 
         instance = this;

@@ -78,7 +78,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
     {
         isGround = false;
         timer = 0;
-        float duration = 0.5f;
+        float duration = 1.0f;
 
         while (timer < duration)
         {

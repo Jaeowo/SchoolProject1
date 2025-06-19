@@ -12,6 +12,8 @@ public class YuzuTree : MonoBehaviour
     private float timer = 0.0f;
     private bool timerTrigger = false;
 
+    public GameObject player;
+
     void Start()
     {
         imageChild = transform.GetChild(0);
@@ -22,33 +24,45 @@ public class YuzuTree : MonoBehaviour
 
     void Update()
     {
-        if (timerTrigger)
+        if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
         {
-            timer += Time.deltaTime;
-        }
+            if (timerTrigger)
+            {
+                timer += Time.deltaTime;
+            }
 
-        if (isCollision && (Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.JoystickButton1)))
-        {
-            timerTrigger = true;
-            CameraManager.instance.FadeOut();
+            if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
+            {
+                timerTrigger = true;
+                CameraManager.instance.FadeOut();
 
-        }
+            }
 
-        if (timer >= sceneChangeTime)
-        {
-            SceneManager.LoadScene("YuzuTreeScene");
+            if (timer >= sceneChangeTime)
+            {
+                Vector3 playerPos = player.transform.position;
+
+                PlayerInfoManager.instance.SavePlayerPosition(playerPos);
+
+                SceneManager.LoadScene("YuzuTreeScene");
+            }
         }
+ 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
         {
-            isCollision = true;
+            if (collision.CompareTag("Player"))
+            {
+                isCollision = true;
 
-            imageChild.gameObject.SetActive(true);
-            textChild.gameObject.SetActive(true);
+                imageChild.gameObject.SetActive(true);
+                textChild.gameObject.SetActive(true);
+            }
         }
+  
     }
 
     private void OnTriggerExit2D(Collider2D collision)

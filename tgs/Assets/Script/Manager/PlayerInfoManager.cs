@@ -8,12 +8,16 @@ public class PlayerInfoManager : MonoBehaviour
 
     private Dictionary<string, bool> progress = new Dictionary<string, bool>();
 
+    // Player Location
+    private Vector3 playerPosition = Vector3.zero;
+
     private void Awake()
     {
         // Singleton Setting
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -41,5 +45,15 @@ public class PlayerInfoManager : MonoBehaviour
     public bool GetProgress(string key)
     {
         return progress.ContainsKey(key) && progress[key];
+    }
+
+    public void SavePlayerPosition(Vector3 pos)
+    {
+        playerPosition = pos;
+    }
+   
+    public Vector3 LoadPlayerPosition()
+    {
+        return playerPosition;
     }
 }
