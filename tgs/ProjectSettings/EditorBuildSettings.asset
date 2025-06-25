@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YuzuTreeScene.unity
     guid: ea19d68badd2f0c4b94a24b7a1b23476
+  - enabled: 1
+    path: Assets/Scenes/HoneyScene.unity
+    guid: dbe65f3c386f7ed4fb82edf209f5446b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

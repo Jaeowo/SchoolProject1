@@ -59,10 +59,6 @@ public class ItemManager : MonoBehaviour
         SettingItemData();
         UpdateItemImages();
         UpdateItemDescription();
-
-
- 
-
     }
 
     private void Update()
@@ -113,16 +109,16 @@ public class ItemManager : MonoBehaviour
         {
             ClearMyItemList();
         }
-        // get & remove test
+        // test
 
         //if(Input.GetKeyDown(KeyCode.Z))
         //{
         //    RemoveItem("Pig");
         //}
-        //if (Input.GetKeyDown(KeyCode.X))
-        //{
-        //    GetItem("Pig");
-        //}
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GetItem("Yuzu");
+        }
     }
 
     private void SettingItemData()

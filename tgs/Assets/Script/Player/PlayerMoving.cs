@@ -30,6 +30,7 @@ public class PlayerMoving : MonoBehaviour
             moveInput = Vector2.zero;
         }
 
+
     }
 
     private void FixedUpdate()
