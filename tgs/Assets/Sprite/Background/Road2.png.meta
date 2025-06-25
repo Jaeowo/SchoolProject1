@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b690405c90764e849958b7a45cbad136
+guid: fbaecd56d010fd04db737409884fe7c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 111211765448056420
-    second: temproad_0
+      213: -1725544337070245680
+    second: Road2_0
+  - first:
+      213: 8656034444681746766
+    second: Road2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: temproad_0
+      name: Road2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1536
-        height: 864
+        x: 197
+        y: 1149
+        width: 1966
+        height: 824
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46e106ee28a1b8100800000000000000
-      internalID: 111211765448056420
+      spriteID: 0d8bdb85192ad08e0800000000000000
+      internalID: -1725544337070245680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Road2_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 387
+        width: 2100
+        height: 725
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e491dce3779602870800000000000000
+      internalID: 8656034444681746766
       vertices: []
       indices: 
       edges: []
@@ -160,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      temproad_0: 111211765448056420
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
