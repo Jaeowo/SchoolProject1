@@ -16,7 +16,11 @@ public class YuzuTreePlayerMoving : MonoBehaviour
     // For parabola moving
     private Vector3 startPos, endPos;
     protected float timer;
-    protected float timeToFloor;
+    //protected float timeToFloor;
+
+    // For Saving Falling Position
+    private Vector3 savingPos;
+    private float fallingTimer;
 
     private bool isGround;
 
@@ -30,6 +34,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
     {
         if (!isGround)
         {
+            FallingCheck();
             return;
         }
 
@@ -61,13 +66,6 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        //Vector2 targetPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
-        //rb.MovePosition(targetPos);
-    }
-
-
     protected static Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
     {
         Func<float, float> f = x => -4 * height * x * x + 4 * height * x;
@@ -79,7 +77,9 @@ public class YuzuTreePlayerMoving : MonoBehaviour
 
     protected IEnumerator NezuParabolaMove()
     {
+        savingPos = transform.position;
         isGround = false;
+        fallingTimer = 0;
         timer = 0;
         float duration = 1.0f;
 
@@ -92,6 +92,17 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             yield return null;
         }
 
+    }
+
+    private void FallingCheck()
+    {
+        float duration = 3.0f;
+        fallingTimer += Time.deltaTime;
+
+        if (fallingTimer > duration)
+        {
+            transform.position = savingPos;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

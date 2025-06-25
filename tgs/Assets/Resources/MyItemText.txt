@@ -1,1 +1,1 @@
-[]
+[{"id":"Yuzu","itemName":"ゆず","description":"カピバラが欲しいかったゆず","isUsing":true}]
