@@ -32,7 +32,7 @@ public class FindYuzu : MonoBehaviour
     private IEnumerator DelayedReaction()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("FindYuzu!!!!!!");
+        //Debug.Log("FindYuzu!!!!!!");
         if (messageBubble != null)
         {
             Vector3 newPos = transform.position + new Vector3(0, 2, 0);

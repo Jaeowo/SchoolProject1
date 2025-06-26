@@ -270,6 +270,11 @@ public class DialogueManager : MonoBehaviour
 
         #endregion
 
+        #region Extra Dialogue
+
+
+        #endregion
+
     }
 
 

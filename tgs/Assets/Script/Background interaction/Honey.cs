@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Honey : MonoBehaviour
 {
@@ -20,10 +21,20 @@ public class Honey : MonoBehaviour
     }
     void Update()
     {
+        if (timerTrigger)
+        {
+            timer += Time.deltaTime;
+        }
+
         if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
         {
             timerTrigger = true;
             CameraManager.instance.FadeOut();
+        }
+
+        if (timer >= sceneChangeTime)
+        {
+            SceneManager.LoadScene("HoneyScene");
         }
     }
 
