@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class HoneySceneManager : MonoBehaviour
 {
@@ -8,10 +10,17 @@ public class HoneySceneManager : MonoBehaviour
 
     public GameObject messageBubble;
 
-    public int GettingHoney { get; set; } = 0;
-    public int HP { get; set; } = 3;
+    public int gettingHoney { get; set; } = 0;
+    public int hp { get; set; } = 3;
 
     private bool hasSceneReturned = false;
+
+    // UI Connect
+    public GameObject[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
+
+    public TextMeshProUGUI honeyText;
 
     private void Awake()
     {
@@ -24,19 +33,18 @@ public class HoneySceneManager : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        if (!hasSceneReturned && GettingHoney >=3)
+        HeartCheck();
+
+        if (!hasSceneReturned && gettingHoney >= 3)
         {
             PlayerInfoManager.instance.SetProgress("CollectHoney", true);
             StartCoroutine(DelayedReaction());
             StartCoroutine(DelayBackPlayScene());
         }
+
+        honeyText.text = gettingHoney.ToString() + "/3";
     }
 
     private IEnumerator DelayBackPlayScene()
@@ -56,4 +64,22 @@ public class HoneySceneManager : MonoBehaviour
             messageBubble.SetActive(true);
         }
     }
+
+    private void HeartCheck()
+    {
+        if(hp <=0)
+        {
+            hp = 0;
+        }
+
+        for(int i=0; i< hearts.Length; i++)
+        {
+            var img = hearts[i].GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = i < hp ? fullHeart : emptyHeart;
+            }
+        }
+    }
 }
+

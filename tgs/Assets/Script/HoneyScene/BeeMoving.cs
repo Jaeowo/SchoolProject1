@@ -53,6 +53,6 @@ public class BeeMoving : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Cursh!");
-        HoneySceneManager.instance.HP -= 1;
+        HoneySceneManager.instance.hp -= 1;
     }
 }
