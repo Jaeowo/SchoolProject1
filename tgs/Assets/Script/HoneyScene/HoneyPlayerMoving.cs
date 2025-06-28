@@ -10,9 +10,17 @@ public class HoneyPlayerMoving : MonoBehaviour
     private Vector3 rightSide = new Vector3(0, 180, 0);
     private Vector3 leftSide = new Vector3(0, 0, 0);
 
+    // Flash Effect
+    private SpriteRenderer spriteRenderer;
+    private float flashDuration = 0.5f;
+    private float flashFrequency = 5.0f;
+    private bool isFlashing = false;
+    private float flashTimer = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -28,11 +36,35 @@ public class HoneyPlayerMoving : MonoBehaviour
         //{
         //    moveInput = Vector2.zero;
         //}
+        if (!HoneySceneManager.instance.isOver)
+        {
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+            moveInput.Normalize();
 
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-        moveInput.Normalize();
-        Rotate();
+            Rotate();
+            FlashEffect();
+        }
+
+    }
+
+    private void FlashEffect()
+    {
+        if(isFlashing)
+        {
+            flashTimer -= Time.deltaTime;
+            float alpha = Mathf.Abs(Mathf.Sin(Time.time * flashFrequency));
+            Color color = spriteRenderer.color;
+            color.a = alpha;
+            spriteRenderer.color = color;
+
+            if(flashTimer <=0f)
+            {
+                isFlashing = false;
+                color.a = 1f;
+                spriteRenderer.color = color;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -52,4 +84,17 @@ public class HoneyPlayerMoving : MonoBehaviour
             transform.rotation = Quaternion.Euler(leftSide);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            Debug.Log("Cursh!");
+            HoneySceneManager.instance.hp -= 1;
+
+            isFlashing = true;
+            flashTimer = flashDuration;
+        }
+    }
+ 
 }

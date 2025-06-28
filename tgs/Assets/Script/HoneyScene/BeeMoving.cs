@@ -18,41 +18,40 @@ public class BeeMoving : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.x > dist)
+        if(!HoneySceneManager.instance.isOver)
         {
-            dirRight = false;
-        }
-        else if (transform.position.x < -dist)
-        {
-            dirRight = true;
+            if (transform.position.x > dist)
+            {
+                dirRight = false;
+            }
+            else if (transform.position.x < -dist)
+            {
+                dirRight = true;
+            }
+
+            if (dirRight)
+            {
+                GoRight();
+            }
+            else
+            {
+                GoLeft();
+            }
         }
 
-        if (dirRight)
-        {
-            GoRight();
-        }
-        else
-        {
-            GoLeft();
-        }
+
     }
 
     private void GoRight()
     {
-        pos += transform.right * Time.deltaTime * speed;
-        transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * waveHeight;
+        pos += Vector3.right * Time.deltaTime * speed;
+        transform.position = pos + Vector3.up * Mathf.Sin(Time.time * frequency) * waveHeight;
 
     }
 
     private void GoLeft()
     {
-        pos -= transform.right * Time.deltaTime * speed;
-        transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * waveHeight;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Cursh!");
-        HoneySceneManager.instance.hp -= 1;
+        pos -= Vector3.right * Time.deltaTime * speed;
+        transform.position = pos + Vector3.up * Mathf.Sin(Time.time * frequency) * waveHeight;
     }
 }

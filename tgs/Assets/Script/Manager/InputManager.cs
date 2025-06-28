@@ -29,13 +29,7 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("ESC Å° ´­¸²");
             Application.Quit();
         }
-    }
-
-    void CheckInventory()
-    {
-
     }
 }
