@@ -3,23 +3,40 @@ using UnityEngine;
 
 public class ChangingPlayerStat : MonoBehaviour
 {
+    private bool finishYuzu = false;
+    private bool finishHoney = false;
 
     void Start()
     {
-        if (PlayerInfoManager.instance.GetProgress("FindYuzu"))
+        if(!finishYuzu)
         {
-            Vector3 savedPos = PlayerInfoManager.instance.LoadPlayerPosition();
-            if (savedPos != Vector3.zero)
+            if (PlayerInfoManager.instance.GetProgress("FindYuzu"))
             {
-                transform.position = savedPos;
+                Vector3 savedPos = PlayerInfoManager.instance.LoadPlayerPosition();
+                if (savedPos != Vector3.zero)
+                {
+                    transform.position = savedPos;
+                }
+                ItemManager.instance.GetItem("Yuzu");
+                finishYuzu = true;
             }
-            ItemManager.instance.GetItem("Yuzu");
-        }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        }
+ 
+        if (!finishHoney)
+        {
+            if (PlayerInfoManager.instance.GetProgress("CollectHoney"))
+            {
+                Vector3 savedPos = PlayerInfoManager.instance.LoadPlayerPosition();
+                if (savedPos != Vector3.zero)
+                {
+                    transform.position = savedPos;
+                }
+                ItemManager.instance.GetItem("Honey");
+                finishHoney = true;
+
+            }
+        }
 
     }
 

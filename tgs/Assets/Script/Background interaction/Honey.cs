@@ -12,6 +12,8 @@ public class Honey : MonoBehaviour
     private float timer = 0.0f;
     private bool timerTrigger = false;
 
+    public GameObject player;
+
     void Start()
     {
         imageChild = transform.GetChild(0);
@@ -21,20 +23,27 @@ public class Honey : MonoBehaviour
     }
     void Update()
     {
-        if (timerTrigger)
+        if (!PlayerInfoManager.instance.GetProgress("CollectHoney"))
         {
-            timer += Time.deltaTime;
-        }
+            if (timerTrigger)
+            {
+                timer += Time.deltaTime;
+            }
 
-        if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
-        {
-            timerTrigger = true;
-            CameraManager.instance.FadeOut();
-        }
+            if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
+            {
+                timerTrigger = true;
+                CameraManager.instance.FadeOut();
+            }
 
-        if (timer >= sceneChangeTime)
-        {
-            SceneManager.LoadScene("HoneyScene");
+            if (timer >= sceneChangeTime)
+            {
+                Vector3 playerPos = player.transform.position;
+                PlayerInfoManager.instance.SavePlayerPosition(playerPos);
+
+                SceneManager.LoadScene("HoneyScene");
+
+            }
         }
     }
 

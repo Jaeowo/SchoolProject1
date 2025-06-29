@@ -25,25 +25,17 @@ public class HoneyPlayerMoving : MonoBehaviour
 
     void Update()
     {
-        //if(!PlayerInfoManager.instance.GetProgress("CollectHoney"))
-        //{
-        //    moveInput.x = Input.GetAxisRaw("Horizontal");
-        //    moveInput.y = Input.GetAxisRaw("Vertical");
-        //    moveInput.Normalize();
-        //    Rotate();
-        //}
-        //else
-        //{
-        //    moveInput = Vector2.zero;
-        //}
-        if (!HoneySceneManager.instance.isOver)
+        if (!PlayerInfoManager.instance.GetProgress("CollectHoney"))
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput.Normalize();
-
             Rotate();
             FlashEffect();
+        }
+        else
+        {
+            moveInput = Vector2.zero;
         }
 
     }

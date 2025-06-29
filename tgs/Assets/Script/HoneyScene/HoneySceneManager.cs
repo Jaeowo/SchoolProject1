@@ -102,7 +102,7 @@ public class HoneySceneManager : MonoBehaviour
         if (!hasSceneReturned && gettingHoney >= 3)
         {
             isOver = true;
-            //PlayerInfoManager.instance.SetProgress("CollectHoney", true);
+            PlayerInfoManager.instance.SetProgress("CollectHoney", true);
             StartCoroutine(DelayedReaction());
             StartCoroutine(DelayBackPlayScene());
         }

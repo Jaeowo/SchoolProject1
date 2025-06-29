@@ -4,9 +4,15 @@ public class HoneyComb : MonoBehaviour
 {
     private bool isColliding = false;
 
+    private Transform imageChild;
+    private Transform textChild;
+
     void Start()
     {
-        
+        imageChild = transform.GetChild(0);
+        textChild = transform.GetChild(1);
+
+        ChildActiveToFalse();
     }
 
     void Update()
@@ -26,6 +32,24 @@ public class HoneyComb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isColliding = true;
+
+            imageChild.gameObject.SetActive(true);
+            textChild.gameObject.SetActive(true);
         }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isColliding = false;
+
+            ChildActiveToFalse();
+        }
+    }
+
+    private void ChildActiveToFalse()
+    {
+        imageChild.gameObject.SetActive(false);
+        textChild.gameObject.SetActive(false);
     }
 }
