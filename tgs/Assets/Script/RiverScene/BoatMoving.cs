@@ -18,8 +18,18 @@ public class BoatMoving : MonoBehaviour
 
     void Update()
     {
-        HandleLaneInput();
-        ApplyFloating();
+        //if (!PlayerInfoManager.instance.GetProgress("EndBoat"))
+        //{
+        //    HandleLaneInput();
+        //    ApplyFloating();
+        //}
+
+        if(!RiverSceneManager.instance.isOver)
+        {
+            HandleLaneInput();
+            ApplyFloating();
+        }
+        
     }
 
     void HandleLaneInput()
@@ -50,4 +60,6 @@ public class BoatMoving : MonoBehaviour
         transform.position = basePosition + Vector3.up * yOffset;
         transform.rotation = Quaternion.Euler(0, 0, zRot);
     }
+
+
 }
