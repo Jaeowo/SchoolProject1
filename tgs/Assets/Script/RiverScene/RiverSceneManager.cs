@@ -24,7 +24,7 @@ public class RiverSceneManager : MonoBehaviour
     // Prefab
     public GameObject obstaclePrefab;
     private int clearCheck = 0;
-    private float frequncy = 2.0f;
+    private float frequncy = 1.8f;
     private float spawnTimer = 0f;
 
     private void Awake()
@@ -83,7 +83,7 @@ public class RiverSceneManager : MonoBehaviour
 
     private void GameClear()
     {
-        if (clearCheck >= 10)
+        if (clearCheck >= 20)
         {
             //PlayerInfoManager.instance.SetProgress("EndBoat", true);
             isOver = true;

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class BeeMoving : MonoBehaviour
 {
-    private float dist = 5f;
-    private float speed = 4f;
-    private float frequency = 5f;
-    private float waveHeight = 1.4f;
+    public float dist = 5f;
+    public float speed = 4f;
+    public float frequency = 5f;
+    public float waveHeight = 1.4f;
 
     Vector3 pos;
     bool dirRight = true;
