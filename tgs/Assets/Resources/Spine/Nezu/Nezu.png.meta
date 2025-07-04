@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 7b77dc72a1c7a5b4a9a1bd29a6647367
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6283801267111548677
+    second: Nezu_0
+  - first:
+      213: 4662088055217405603
+    second: Nezu_1
+  - first:
+      213: 767056818723505075
+    second: Nezu_2
+  - first:
+      213: -4663713074045169428
+    second: Nezu_3
+  - first:
+      213: -6928396536801912490
+    second: Nezu_4
+  - first:
+      213: 7717638590442922778
+    second: Nezu_5
+  - first:
+      213: 9141265501660788737
+    second: Nezu_6
+  - first:
+      213: -2158665396628469854
+    second: Nezu_7
+  - first:
+      213: -556177221252853706
+    second: Nezu_8
+  - first:
+      213: 6523461319608388297
+    second: Nezu_9
+  - first:
+      213: 6321260968783625027
+    second: Nezu_10
+  - first:
+      213: 4720946235125277145
+    second: Nezu_11
+  - first:
+      213: -7002921197535250188
+    second: Nezu_12
+  - first:
+      213: -3629385579966037507
+    second: Nezu_13
+  - first:
+      213: -5007647752822603078
+    second: Nezu_14
+  - first:
+      213: -4220149718614223738
+    second: Nezu_15
+  - first:
+      213: -6078194188606468805
+    second: Nezu_16
+  - first:
+      213: 8706460369148882151
+    second: Nezu_17
+  - first:
+      213: -6635373594978976080
+    second: Nezu_18
+  - first:
+      213: 6945339848949131447
+    second: Nezu_19
+  - first:
+      213: 5076250529046774257
+    second: Nezu_20
+  - first:
+      213: -6168423145752360002
+    second: Nezu_21
+  - first:
+      213: 6163967764277487194
+    second: Nezu_22
+  - first:
+      213: -1723018799100620687
+    second: Nezu_23
+  - first:
+      213: 3612652502031828790
+    second: Nezu_24
+  - first:
+      213: 3078513775150538048
+    second: Nezu_25
+  - first:
+      213: -5794239098300634909
+    second: Nezu_26
+  - first:
+      213: -5810810359252496384
+    second: Nezu_27
+  - first:
+      213: -6982210797860960330
+    second: Nezu_28
+  - first:
+      213: -507816950883976786
+    second: Nezu_29
+  - first:
+      213: 5038568904967150325
+    second: Nezu_30
+  - first:
+      213: -1874018288091364391
+    second: Nezu_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nezu_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1716
+        width: 669
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8aaa26a047bc8a0800000000000000
+      internalID: -6283801267111548677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_1
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1716
+        width: 294
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae33daa26013b040800000000000000
+      internalID: 4662088055217405603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_2
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1704
+        width: 307
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b34e82dc1225aa00800000000000000
+      internalID: 767056818723505075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_3
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1767
+        width: 301
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce051372ba9274fb0800000000000000
+      internalID: -4663713074045169428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_4
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 1837
+        width: 108
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65910e8de0469df90800000000000000
+      internalID: -6928396536801912490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_5
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 1876
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a136230886f8a1b60800000000000000
+      internalID: 7717638590442922778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_6
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1876
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10836009a8c4cde70800000000000000
+      internalID: 9141265501660788737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_7
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1828
+        width: 129
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a748054241ea02e0800000000000000
+      internalID: -2158665396628469854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_8
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1716
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6305f0793cf0848f0800000000000000
+      internalID: -556177221252853706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_9
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1586
+        width: 307
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca4245e18df78a50800000000000000
+      internalID: 6523461319608388297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_10
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 1731
+        width: 73
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34bb3e01c51a9b750800000000000000
+      internalID: 6321260968783625027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 884
+        width: 926
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d12c54969b248140800000000000000
+      internalID: 4720946235125277145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_12
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 884
+        width: 415
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8bbde1640a0de90800000000000000
+      internalID: -7002921197535250188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_13
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 1697
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df103395b05d1adc0800000000000000
+      internalID: -3629385579966037507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_14
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1651
+        width: 93
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2c9b486e2418ab0800000000000000
+      internalID: -5007647752822603078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_15
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1638
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684d803b0340f65c0800000000000000
+      internalID: -4220149718614223738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_16
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 822
+        width: 449
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d8440d69ae5aba0800000000000000
+      internalID: -6078194188606468805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_17
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 1375
+        width: 176
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eca222b39f83d870800000000000000
+      internalID: 8706460369148882151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_18
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 1556
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be754ffeda6ae3a0800000000000000
+      internalID: -6635373594978976080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_19
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1367
+        width: 6
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b86afc6bcdc26060800000000000000
+      internalID: 6945339848949131447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_20
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1360
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1c8b606f6727640800000000000000
+      internalID: 5076250529046774257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_21
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 1360
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb0225a4db556aa0800000000000000
+      internalID: -6168423145752360002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 960
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56e7b40600da8550800000000000000
+      internalID: 6163967764277487194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_23
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 1
+        width: 607
+        height: 821
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170994af78b9618e0800000000000000
+      internalID: -1723018799100620687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_24
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 596
+        width: 186
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63788885f48b22230800000000000000
+      internalID: 3612652502031828790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_25
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 763
+        width: 152
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d9ef3c7f319ba20800000000000000
+      internalID: 3078513775150538048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_26
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 625
+        width: 122
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e86c124d3ab69fa0800000000000000
+      internalID: -5794239098300634909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_27
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 554
+        width: 73
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0005897e3cadb5fa0800000000000000
+      internalID: -5810810359252496384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_28
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1
+        width: 410
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b7c99ec5443a1f90800000000000000
+      internalID: -6982210797860960330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_29
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 477
+        width: 93
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea973a77c2fd3f8f0800000000000000
+      internalID: -507816950883976786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_30
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 2
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa55ec39b79ce540800000000000000
+      internalID: 5038568904967150325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezu_31
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 1
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d38ab3cb462ef5e0800000000000000
+      internalID: -1874018288091364391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nezu_0: -6283801267111548677
+      Nezu_1: 4662088055217405603
+      Nezu_10: 6321260968783625027
+      Nezu_11: 4720946235125277145
+      Nezu_12: -7002921197535250188
+      Nezu_13: -3629385579966037507
+      Nezu_14: -5007647752822603078
+      Nezu_15: -4220149718614223738
+      Nezu_16: -6078194188606468805
+      Nezu_17: 8706460369148882151
+      Nezu_18: -6635373594978976080
+      Nezu_19: 6945339848949131447
+      Nezu_2: 767056818723505075
+      Nezu_20: 5076250529046774257
+      Nezu_21: -6168423145752360002
+      Nezu_22: 6163967764277487194
+      Nezu_23: -1723018799100620687
+      Nezu_24: 3612652502031828790
+      Nezu_25: 3078513775150538048
+      Nezu_26: -5794239098300634909
+      Nezu_27: -5810810359252496384
+      Nezu_28: -6982210797860960330
+      Nezu_29: -507816950883976786
+      Nezu_3: -4663713074045169428
+      Nezu_30: 5038568904967150325
+      Nezu_31: -1874018288091364391
+      Nezu_4: -6928396536801912490
+      Nezu_5: 7717638590442922778
+      Nezu_6: 9141265501660788737
+      Nezu_7: -2158665396628469854
+      Nezu_8: -556177221252853706
+      Nezu_9: 6523461319608388297
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,3 +1,4 @@
+using Spine.Unity;
 using UnityEngine;
 
 public class PlayerMoving : MonoBehaviour
@@ -10,9 +11,14 @@ public class PlayerMoving : MonoBehaviour
     private Vector3 rightSide = new Vector3(0, 180, 0);
     private Vector3 leftSide = new Vector3(0, 0, 0);
 
+    // Animation
+    private SkeletonAnimation skeletonAnimation;
+    private string currentAnim = "";
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
     }
 
     void Update()
@@ -24,6 +30,15 @@ public class PlayerMoving : MonoBehaviour
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput.Normalize();
             Rotate();
+
+            if(moveInput != Vector2.zero)
+            {
+                SetAnimation("Walk", true);
+            }
+            else
+            {
+                SetAnimation("Idle", true);
+            }
         }
         else
         {
@@ -49,6 +64,16 @@ public class PlayerMoving : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(leftSide);
         }
+    }
+
+    private void SetAnimation(string name, bool loop)
+    {
+        if (currentAnim == name)
+        {
+            return;
+        }
+        skeletonAnimation.AnimationState.SetAnimation(0, name, loop);
+        currentAnim = name;
     }
 
 }
