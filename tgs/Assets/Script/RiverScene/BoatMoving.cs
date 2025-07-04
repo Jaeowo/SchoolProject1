@@ -29,7 +29,6 @@ public class BoatMoving : MonoBehaviour
             HandleLaneInput();
             ApplyFloating();
         }
-        
     }
 
     void HandleLaneInput()

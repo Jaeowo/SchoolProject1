@@ -12,6 +12,7 @@ public class RiverSceneManager : MonoBehaviour
     // Stat
     public int hp { get; set; } = 3;
     public bool isOver { get; set; } = false;
+    public bool isClear { get; set; } = false;
 
     // UI Connect
     public GameObject gameOverPanel;
@@ -83,11 +84,9 @@ public class RiverSceneManager : MonoBehaviour
 
     private void GameClear()
     {
-        if (clearCheck >= 20)
+        if (clearCheck >= 5)
         {
-            //PlayerInfoManager.instance.SetProgress("EndBoat", true);
-            isOver = true;
-            // Find another stage
+            isClear = true;
         }
     }
 
@@ -98,21 +97,22 @@ public class RiverSceneManager : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        if (!isOver)
+        if (isOver || isClear)
         {
-            if (spawnTimer < frequncy)
-            {
-                spawnTimer += Time.deltaTime;
-            }
-            else
-            {
-                Instantiate(obstaclePrefab);
-                Debug.Log("Spawn");
-                spawnTimer = 0f;
-                clearCheck++;
-                Debug.Log("clear :" + clearCheck);
-            }
+            return;   
         }
 
+        if (spawnTimer < frequncy)
+        {
+            spawnTimer += Time.deltaTime;
+        }
+        else
+        {
+            Instantiate(obstaclePrefab);
+            Debug.Log("Spawn");
+            spawnTimer = 0f;
+            clearCheck++;
+            Debug.Log("clear :" + clearCheck);
+        }
     }
 }

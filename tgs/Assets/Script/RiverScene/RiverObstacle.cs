@@ -41,6 +41,8 @@ public class RiverObstacle : MonoBehaviour
             default:
                 break;
         }
+
+        Destroy(gameObject, 10f);
     }
 
     private void TypeNum00Set()

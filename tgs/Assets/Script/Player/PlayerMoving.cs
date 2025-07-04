@@ -45,6 +45,11 @@ public class PlayerMoving : MonoBehaviour
             moveInput = Vector2.zero;
         }
 
+        if(DialogueManager.instance.isInDialogue)
+        {
+            SetAnimation("Idle", true);
+        }
+
 
     }
 
