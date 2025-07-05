@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20363457220f5ca4dac30234b53a9309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2133984511}
 --- !u!61 &466727669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8058,7 +8058,7 @@ GameObject:
   - component: {fileID: 2133984517}
   - component: {fileID: 2133984516}
   m_Layer: 0
-  m_Name: Nezu
+  m_Name: Nezuchan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

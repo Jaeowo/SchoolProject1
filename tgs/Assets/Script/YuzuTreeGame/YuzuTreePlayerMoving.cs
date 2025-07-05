@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using Spine.Unity;
 
 public class YuzuTreePlayerMoving : MonoBehaviour
 {
@@ -24,10 +25,17 @@ public class YuzuTreePlayerMoving : MonoBehaviour
 
     private bool isGround;
 
+    // Animation
+    private SkeletonAnimation skeletonAnim;
+    private string currentAnim = "";
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        skeletonAnim = GetComponent<SkeletonAnimation>();
         isGround = false;
+
+        SetAnimation("Idle", true);
     }
 
     void Update()
@@ -83,6 +91,8 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         timer = 0;
         float duration = 1.0f;
 
+        SetAnimation("Jump", false);
+
         while (timer < duration)
         {
             timer += Time.deltaTime;
@@ -111,7 +121,17 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         if (collision.gameObject.CompareTag("Branch"))
         {
             isGround = true;
+            SetAnimation("Idle", true);
         }
     }
 
+    private void SetAnimation(string name, bool loop)
+    {
+        if (currentAnim == name)
+        {
+            return;
+        }
+        skeletonAnim.AnimationState.SetAnimation(0, name, loop);
+        currentAnim = name;
+    }
 }
