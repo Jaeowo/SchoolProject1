@@ -1,1 +1,1 @@
-[{"id":"Branch","itemName":"枝","description":"鳥の巣を作ろう","isUsing":false},{"id":"Yuzu","itemName":"ゆず","description":"カピバラが欲しいかったゆず","isUsing":true},{"id":"Branch","itemName":"枝","description":"鳥の巣を作ろう","isUsing":false}]
+[]
