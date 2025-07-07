@@ -718,6 +718,7 @@ GameObject:
   - component: {fileID: 550353575}
   - component: {fileID: 550353574}
   - component: {fileID: 550353580}
+  - component: {fileID: 550353581}
   m_Layer: 0
   m_Name: Nezuchan
   m_TagString: Player
@@ -919,6 +920,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe714dfb12b9080418f6ba93bf2c7a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &550353581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550353573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2148233662a1094a9adda933d574823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yuzu: {fileID: 46160164}
+  messageBubble: {fileID: 1253436916}
 --- !u!1001 &635391663
 PrefabInstance:
   m_ObjectHideFlags: 0

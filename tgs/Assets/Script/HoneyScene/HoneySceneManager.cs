@@ -63,7 +63,7 @@ public class HoneySceneManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (messageBubble != null)
         {
-            Vector3 newPos = player.transform.position + new Vector3(0, 2, 0);
+            Vector3 newPos = player.transform.position + new Vector3(0, 3, 0);
             messageBubble.transform.position = newPos;
 
             messageBubble.SetActive(true);

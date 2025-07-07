@@ -1,3 +1,4 @@
+using Spine.Unity;
 using UnityEngine;
 
 public class HoneyPlayerMoving : MonoBehaviour
@@ -11,7 +12,7 @@ public class HoneyPlayerMoving : MonoBehaviour
     private Vector3 leftSide = new Vector3(0, 0, 0);
 
     // Flash Effect
-    private SpriteRenderer spriteRenderer;
+    private SkeletonAnimation skeletonAnimation;
     private float flashDuration = 0.5f;
     private float flashFrequency = 5.0f;
     private bool isFlashing = false;
@@ -20,12 +21,12 @@ public class HoneyPlayerMoving : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
     }
 
     void Update()
     {
-        if (!PlayerInfoManager.instance.GetProgress("CollectHoney"))
+        if (!PlayerInfoManager.instance.GetProgress("CollectHoney") && !HoneySceneManager.instance.isOver)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
@@ -46,15 +47,15 @@ public class HoneyPlayerMoving : MonoBehaviour
         {
             flashTimer -= Time.deltaTime;
             float alpha = Mathf.Abs(Mathf.Sin(Time.time * flashFrequency));
-            Color color = spriteRenderer.color;
-            color.a = alpha;
-            spriteRenderer.color = color;
 
-            if(flashTimer <=0f)
+            Color color = skeletonAnimation.skeleton.GetColor();
+            color.a = alpha;
+            skeletonAnimation.skeleton.SetColor(color);
+
+            if (flashTimer <=0f)
             {
                 isFlashing = false;
-                color.a = 1f;
-                spriteRenderer.color = color;
+                skeletonAnimation.skeleton.SetColor(Color.white);
             }
         }
     }
