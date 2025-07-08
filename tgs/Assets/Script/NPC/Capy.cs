@@ -10,12 +10,17 @@ public class Capy : MonoBehaviour
     private float inputCooldown = 0.5f;
     private float inputCooldownTimer = 0f;
 
+    private SpriteRenderer spriteRenderer;
+    public Sprite YuzuImage;
+
     private void Awake()
     {
         imageChild = transform.GetChild(0);
         textChild = transform.GetChild(1);
 
         ChildActiveToFalse();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -68,21 +73,8 @@ public class Capy : MonoBehaviour
                     DialogueManager.instance.StartDialogue("chapter2.capy04");
                     ItemManager.instance.RemoveItem("Yuzu");
                     ChildActiveToFalse();
+                    spriteRenderer.sprite = YuzuImage;
                 }
-
-
-                //    if (PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
-                //{
-                  
-                //    }
-                //    else if (!PlayerInfoManager.instance.GetProgress("chapter2.capy03"))
-                //    {
-                //        //DialogueManager.instance.StartDialogue("chapter2.capy02");
-                //        //ChildActiveToFalse();
-
-
-                //    }
-                //}
 
             }
         }
