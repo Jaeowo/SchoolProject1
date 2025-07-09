@@ -263,7 +263,25 @@ public class DialogueManager : MonoBehaviour
 
         #region Chapter 3: Kuma
         allDialogueList.Add(new Dialogue("chapter3.password", "kumaHouse", "パスワード。。。", 0, false));
-        allDialogueList.Add(new Dialogue("chapter3.incorrect.", "kumaHouse", "違う。。。", 0, false));
+        allDialogueList.Add(new Dialogue("chapter3.incorrect", "kumaHouse", "違う。。。", 0, false));
+
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "nezumi", "カピバラさんが", 0, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "nezumi", "クマさんがネズミ村の行き方を知ってる", 1, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "nezumi", "って言ってたよ", 2, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "kuma", "うんうん", 3, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "kuma", "それなら手伝えるかもしれない", 4, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "kuma", "でも、簡単なことじゃないよ", 5, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "nezumi", "何をすればいい？", 6, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "kuma", "ぼくの大好物を持ってきてくれたら", 7, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "kuma", "助けてあげよう", 8, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "nezumi", "<swing>(大好物ってことは……はちみつ、かな？)", 9, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma0", "nezumi", "<swing>（ちょっと探してみよう）", 10, false));
+
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "ぼくの大好きな", 0, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "あまいはちみつだ♪", 1, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "やっぱり", 2, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "クマさんの好きなものははちみつだったんだね！", 3, false));
+
 
         #endregion
 

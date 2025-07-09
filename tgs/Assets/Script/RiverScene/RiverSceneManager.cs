@@ -84,7 +84,7 @@ public class RiverSceneManager : MonoBehaviour
 
     private void GameClear()
     {
-        if (clearCheck >= 20)
+        if (clearCheck >= 5)
         {
             isClear = true;
         }
