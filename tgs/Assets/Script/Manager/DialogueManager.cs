@@ -281,6 +281,8 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "あまいはちみつだ♪", 1, false));
         allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "やっぱり", 2, false));
         allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "クマさんの好きなものははちみつだったんだね！", 3, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "はちみつをもらったから", 4, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "ネズミ村への行き方を教えてあげる", 5, false));
 
 
         #endregion
