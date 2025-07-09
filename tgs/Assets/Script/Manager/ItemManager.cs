@@ -37,9 +37,6 @@ public class ItemManager : MonoBehaviour
     public Sprite[] itemSprite;
     public Image[] ItemImage;
 
-    private bool isInventoryOpend = false;
-
-    public bool GetIsInventoryOpend() { return isInventoryOpend; }
 
     private void Awake()
     {
@@ -81,14 +78,14 @@ public class ItemManager : MonoBehaviour
             inventory.SetActive(true);
             if (myItemList != null)
             {
-                isInventoryOpend = true;
+                PlayerInfoManager.instance.SetIsMoving(false);
                 slotSelected(0);
             }
 
         }
         else if (Input.GetKeyDown(KeyCode.Q)|| dpadX > 0)
         {
-            isInventoryOpend = false;
+            PlayerInfoManager.instance.SetIsMoving(true);
             inventory.SetActive(false);
         }
 

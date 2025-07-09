@@ -11,6 +11,9 @@ public class PlayerInfoManager : MonoBehaviour
     // Player Location
     private Vector3 playerPosition = Vector3.zero;
 
+    // Immovable State
+    private bool isMoving = true;
+
     private void Awake()
     {
         // Singleton Setting
@@ -51,9 +54,19 @@ public class PlayerInfoManager : MonoBehaviour
     {
         playerPosition = pos;
     }
-   
+
     public Vector3 LoadPlayerPosition()
     {
         return playerPosition;
+    }
+
+    public bool GetIsMoving()
+    {
+        return isMoving;
+    }
+
+    public void SetIsMoving(bool ismoving)
+    {
+        isMoving = ismoving;
     }
 }

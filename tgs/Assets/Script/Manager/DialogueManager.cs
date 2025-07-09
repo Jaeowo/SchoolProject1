@@ -127,7 +127,8 @@ public class DialogueManager : MonoBehaviour
 
     // Input chapter name to argument, Start this chapter's dialogue
     public void StartDialogue(string chapter)
-    {
+    { 
+        PlayerInfoManager.instance.SetIsMoving(false);
         isInDialogue = true;
         FilterDialogueByChapter(chapter);
         dialogueObject.SetActive(true);
@@ -138,6 +139,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        PlayerInfoManager.instance.SetIsMoving(true);
         isInDialogue = false;
         dialogueObject.SetActive(false);
         currentSpeakerTransform = null;
@@ -209,18 +211,6 @@ public class DialogueManager : MonoBehaviour
     {
         //string _chapter, string _character, string _dialogueText, int _dialogueIndex
 
-        //Test
-        #region TestDialogue
-        //allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "<wave>Butterfly!", 0, false));
-        //allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "hey", 1, false));
-        //allDialogueList.Add(new Dialogue("chapter1.bird01", "bird", "nezumi!", 2, false));
-        //allDialogueList.Add(new Dialogue("chapter1.bird01", "nezumi", "why?", 3, false));
-
-        //allDialogueList.Add(new Dialogue("chapter1.bird02", "bird", "find branch", 0, false));
-
-        //allDialogueList.Add(new Dialogue("questComplete", "bird", "thank you", 0, false));
-        #endregion
-
         #region Chapter 1: Bird
         //allDialogueList.Add(new Dialogue("hey", "bird", "<wave>やあ！ネズミちゃん！", 0, false));
 
@@ -263,10 +253,17 @@ public class DialogueManager : MonoBehaviour
 
         allDialogueList.Add(new Dialogue("chapter2.capy03", "capy", "<swing>甘いゆずほしいな～", 0, false)); //capy dialogue if quest is not done yet
 
-        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "ゆずありがとう！", 0, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "うわぁ～、おいしそうなゆず！ありがとう！", 0, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "このまま上に進めば、友だちの家があるよ", 1, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "ぼくの友だちの家に入るには", 2, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "ハチミツが大好き", 3, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "って言えばいいんだ", 4, false));
+        allDialogueList.Add(new Dialogue("chapter2.capy04", "nezumi", "カピバラさんありがとう！", 5, false));
         #endregion
 
         #region Chapter 3: Kuma
+        allDialogueList.Add(new Dialogue("chapter3.password", "kumaHouse", "パスワード。。。", 0, false));
+        allDialogueList.Add(new Dialogue("chapter3.incorrect.", "kumaHouse", "違う。。。", 0, false));
 
         #endregion
 

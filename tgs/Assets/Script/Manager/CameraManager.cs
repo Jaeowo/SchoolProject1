@@ -52,7 +52,7 @@ public class CameraManager : MonoBehaviour
         }
 
         Vector3 playerPos = playerTransform.position;
-        Vector3 newPlayerCameraPos = new Vector3(playerPos.x, playerPos.y + 2.5f, -10f);
+        Vector3 newPlayerCameraPos = new Vector3(playerPos.x, playerPos.y + 1f, -10f);
         transform.position = Vector3.Lerp(transform.position, newPlayerCameraPos, 2f * Time.deltaTime);
 
     }
