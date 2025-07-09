@@ -148,6 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 4092058156312652752, guid: 6ba1351335bfe5744ab7c221146ae132, type: 3}
-  - {fileID: -1674662278372388499, guid: 6ba1351335bfe5744ab7c221146ae132, type: 3}
-  - {fileID: 5691244958102002404, guid: 6ba1351335bfe5744ab7c221146ae132, type: 3}
+  - {fileID: 21300000, guid: 901b0ec089384634dbe5d002cbb4925b, type: 3}
+  - {fileID: 21300000, guid: 667ada9693d91cc4387a7b9551164ee5, type: 3}
+  - {fileID: 21300000, guid: c4b250cb6a385a048ad8ee167b06f2f6, type: 3}
