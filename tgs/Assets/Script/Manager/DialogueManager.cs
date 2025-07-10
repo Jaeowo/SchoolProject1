@@ -283,8 +283,43 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "クマさんの好きなものははちみつだったんだね！", 3, false));
         allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "はちみつをもらったから", 4, false));
         allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "ネズミ村への行き方を教えてあげる", 5, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "まずはこのチケットを受け取って", 6, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "海の向こうで", 7, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "kuma", "ペリカンがネズミ村まで連れていってくれるはずさ", 8, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "ありがとう、クマさん！", 9, false));
+        allDialogueList.Add(new Dialogue("chapter3.kuma1", "nezumi", "<swing>(とりあえずボート屋さんに行ってみよう)", 10, false));
 
+        #endregion
 
+        #region Chapter 4: Fox
+        allDialogueList.Add(new Dialogue("chapter4.greeting", "fox", "やあ、ちいさなネズミさん", 0, false));
+        allDialogueList.Add(new Dialogue("chapter4.greeting", "fox", "ちいさな動物用のボートもあるんだ", 1, false));
+
+        allDialogueList.Add(new Dialogue("chapter4.useTicket", "nezumi", "ボートのチケットがある", 0, false));
+        allDialogueList.Add(new Dialogue("chapter4.useTicket", "nezumi", "これ、使える？", 1, false));
+        allDialogueList.Add(new Dialogue("chapter4.useTicket", "fox", "ちょっと確認してみるね…", 2, false));
+        allDialogueList.Add(new Dialogue("chapter4.useTicket", "fox", "ふむふむ、いいね", 3, false));
+        allDialogueList.Add(new Dialogue("chapter4.useTicket", "fox", "あそこに停まってるボートに乗っていいよ", 4, false));
+        allDialogueList.Add(new Dialogue("chapter4.useTicket", "nezumi", "ありがとう", 5, false));
+
+        allDialogueList.Add(new Dialogue("chapter4.haventTicket", "fox", "でも…チケットがないと", 0, false));
+        allDialogueList.Add(new Dialogue("chapter4.haventTicket", "fox", "乗せてあげられないんだ", 1, false));
+        #endregion
+
+        #region Chapter 5: Pelican
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "nezumi", "ペリカンさん、こんにちは！", 0, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "nezumi", "クマさんが、ペリカンさんに会えば", 1, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "nezumi", "ネズミ村への行き方を", 2, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "nezumi", "教えてくれるって言ってたよ", 3, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "pelican", "おっ！クマさんの紹介か〜", 4, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "pelican", "ネズミ村への行き方なら", 5, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "pelican", "もちろん知ってる", 6, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "pelican", "ぼくが連れていってあげるよ", 7, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "pelican", "ネズミ村へ行く準備ができたら、", 8, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "pelican", "また声をかけてね", 9, false));
+        allDialogueList.Add(new Dialogue("chapter5.pelican00", "nezumi", "ありがとう！", 10, false));
+
+        allDialogueList.Add(new Dialogue("chapter5.pelican01", "pelican", "よしっ、ネズミ村へ出発！", 0, false));
         #endregion
 
         #region Extra Dialogue
