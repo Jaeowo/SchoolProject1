@@ -10,6 +10,7 @@ public class KumaHouse : MonoBehaviour
 
     private Transform imageChild;
     private Transform textChild;
+    private Transform playerTransform;
 
     void Start()
     {
@@ -20,7 +21,10 @@ public class KumaHouse : MonoBehaviour
 
         ChildActiveToFalse();
 
+        playerTransform = player.GetComponent<Transform>();
+
         // Test
+        // Later Please Delete here
         PlayerInfoManager.instance.SetProgress("chapter2.capy04", true);
     }
 
@@ -61,6 +65,7 @@ public class KumaHouse : MonoBehaviour
                 }
                 else
                 {
+                    PlayerInfoManager.instance.SavePlayerPosition(playerTransform.position);
                     StartCoroutine(FadeOutInAndMove());
                 }
             }

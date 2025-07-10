@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class YuzuTree : MonoBehaviour
+public class Boat : MonoBehaviour
 {
     private bool isCollision = false;
 
@@ -11,8 +11,6 @@ public class YuzuTree : MonoBehaviour
     private const float sceneChangeTime = 1.0f;
     private float timer = 0.0f;
     private bool timerTrigger = false;
-
-    public GameObject player;
 
     void Start()
     {
@@ -24,36 +22,22 @@ public class YuzuTree : MonoBehaviour
 
     void Update()
     {
-        if (!PlayerInfoManager.instance.GetProgress("FindYuzu") && 
-            PlayerInfoManager.instance.GetProgress("chapter2.capy01"))
+        if (timerTrigger)
         {
-            if (timerTrigger)
-            {
-                timer += Time.deltaTime;
-            }
-
-            if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
-            {
-                timerTrigger = true;
-                CameraManager.instance.FadeOut();
-
-            }
-
-            if (timer >= sceneChangeTime)
-            {
-                Vector3 playerPos = player.transform.position;
-
-                PlayerInfoManager.instance.SavePlayerPosition(playerPos);
-
-                SceneManager.LoadScene("YuzuTreeScene");
-            }
+            timer += Time.deltaTime;
         }
- 
+
+        if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
+        {
+            timerTrigger = true;
+            CameraManager.instance.FadeOut();
+            SceneManager.LoadScene("RiverScene");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
+        if (PlayerInfoManager.instance.GetProgress("chapter4.useTicket"))
         {
             if (collision.CompareTag("Player"))
             {
@@ -63,7 +47,7 @@ public class YuzuTree : MonoBehaviour
                 textChild.gameObject.SetActive(true);
             }
         }
-  
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

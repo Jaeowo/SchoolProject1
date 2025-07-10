@@ -13,6 +13,8 @@ public class KumaPassword : MonoBehaviour
 
     public GameObject passwordPanel;
 
+    private Transform playerTransform;
+
     private void Start()
     {
         incorrect1.onClick.AddListener(OnIncorrectButtonClick);
@@ -20,6 +22,8 @@ public class KumaPassword : MonoBehaviour
         correct.onClick.AddListener(OnCorrectButtonClick);
 
         passwordPanel.SetActive(false);
+
+        playerTransform = player.GetComponent<Transform>();
     }
 
     void OnIncorrectButtonClick()
@@ -32,6 +36,7 @@ public class KumaPassword : MonoBehaviour
     {
         PlayerInfoManager.instance.SetProgress("PassKumaHouse", true);
         passwordPanel.SetActive(false);
+        PlayerInfoManager.instance.SavePlayerPosition(playerTransform.position);
         StartCoroutine(FadeOutInAndMove());
     }
 

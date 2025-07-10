@@ -23,7 +23,8 @@ public class Honey : MonoBehaviour
     }
     void Update()
     {
-        if (!PlayerInfoManager.instance.GetProgress("CollectHoney"))
+        if (!PlayerInfoManager.instance.GetProgress("CollectHoney")&&
+            PlayerInfoManager.instance.GetProgress("chapter3.kuma0"))
         {
             if (timerTrigger)
             {
