@@ -75,15 +75,12 @@ public class KumaHouse : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-                isCollision = true;
+            isCollision = true;
 
-                imageChild.gameObject.SetActive(true);
-                textChild.gameObject.SetActive(true);
-            }
+            imageChild.gameObject.SetActive(true);
+            textChild.gameObject.SetActive(true);
         }
 
     }

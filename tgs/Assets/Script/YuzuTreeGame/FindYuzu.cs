@@ -8,18 +8,26 @@ public class FindYuzu : MonoBehaviour
     public GameObject messageBubble;
 
     private bool isColliding = false;
-    private bool hasSceneReturned = false; 
+    private bool hasSceneReturned = false;
 
     private void Update()
     {
         if (!hasSceneReturned && PlayerInfoManager.instance.GetProgress("FindYuzu"))
         {
-            hasSceneReturned = true; 
-            StartCoroutine(DelayBackPlayScene());
+            hasSceneReturned = true;
+            StartCoroutine(DelayBackPlaySceneAsync());
+        }
+
+        //test
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            PlayerInfoManager.instance.SetProgress("FindYuzu", true);
+            StartCoroutine(DelayedReaction());
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isColliding && collision.gameObject == yuzu)
         {
@@ -32,21 +40,24 @@ public class FindYuzu : MonoBehaviour
     private IEnumerator DelayedReaction()
     {
         yield return new WaitForSeconds(0.5f);
-        //Debug.Log("FindYuzu!!!!!!");
         if (messageBubble != null)
         {
             Vector3 newPos = transform.position + new Vector3(0, 3, 0);
             messageBubble.transform.position = newPos;
-
             messageBubble.SetActive(true);
         }
 
         isColliding = false;
     }
 
-    private IEnumerator DelayBackPlayScene()
+    private IEnumerator DelayBackPlaySceneAsync()
     {
-        yield return new WaitForSeconds(3f); 
-        SceneManager.LoadScene("PlayScene");
+        yield return new WaitForSeconds(3f);
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("PlayScene");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

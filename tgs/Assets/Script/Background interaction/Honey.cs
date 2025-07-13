@@ -59,7 +59,7 @@ public class Honey : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
+        if (!PlayerInfoManager.instance.GetProgress("CollectHoney"))
         {
             Debug.Log("Collision");
             if (collision.CompareTag("Player"))
