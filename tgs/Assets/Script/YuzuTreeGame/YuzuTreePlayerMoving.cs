@@ -29,6 +29,8 @@ public class YuzuTreePlayerMoving : MonoBehaviour
     private SkeletonAnimation skeletonAnim;
     private string currentAnim = "";
 
+    private bool isMoving = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +45,11 @@ public class YuzuTreePlayerMoving : MonoBehaviour
         if (!isGround)
         {
             FallingCheck();
+            return;
+        }
+
+        if (isMoving)
+        {
             return;
         }
 
@@ -85,6 +92,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
 
     protected IEnumerator NezuParabolaMove()
     {
+        isMoving = true;
         savingPos = transform.position;
         isGround = false;
         fallingTimer = 0;
@@ -101,7 +109,7 @@ public class YuzuTreePlayerMoving : MonoBehaviour
             rb.MovePosition(targetPos);
             yield return null;
         }
-
+        isMoving = false;
     }
 
     private void FallingCheck()
