@@ -51,16 +51,6 @@ public class Bird : MonoBehaviour
                         ChildActiveToFalse();
 
                     }
-                    else if (!PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
-                    {
-                        DialogueManager.instance.StartDialogue("chapter1.bird02");
-                        ChildActiveToFalse();
-                    }
-                }
-
-                if (PlayerInfoManager.instance.GetProgress("chapter1.bird03"))
-                {
-                    DialogueManager.instance.StartDialogue("chapter1.bird04");
                 }
 
             }
