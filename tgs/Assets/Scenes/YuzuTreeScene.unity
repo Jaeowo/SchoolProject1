@@ -1080,53 +1080,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1076728629}
   m_SourcePrefab: {fileID: 100100000, guid: ee33e6dd7df6519458fc60dc343561bb, type: 3}
---- !u!1 &908366122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 908366123}
-  - component: {fileID: 908366124}
-  m_Layer: 0
-  m_Name: YuzuTreeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &908366123
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908366122}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.836942, y: -1.8533058, z: -0.060584348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &908366124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908366122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da31a762148021f4c809a25aa7c523f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  branchLeftPrefab: {fileID: 4194337552225961765, guid: f8e410715c9146b4a87c49e9de140897, type: 3}
-  branchRightPrefab: {fileID: 1468931953147299358, guid: ee33e6dd7df6519458fc60dc343561bb, type: 3}
-  mainYuzuTreePrefab: {fileID: 4379292306032924814, guid: 20dae6b815a1eff42a8b89e5f81d7921, type: 3}
 --- !u!1001 &1059905985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1920,7 +1873,6 @@ SceneRoots:
   - {fileID: 1083113310613324965}
   - {fileID: 73813002}
   - {fileID: 1234612564}
-  - {fileID: 908366123}
   - {fileID: 538560240}
   - {fileID: 46160166}
   - {fileID: 1364455185}

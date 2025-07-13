@@ -20,6 +20,8 @@ public class YuzuTree : MonoBehaviour
         textChild = transform.GetChild(1);
 
         ChildActiveToFalse();
+        //Test
+        PlayerInfoManager.instance.SetProgress("chapter2.capy01", true);
     }
 
     void Update()

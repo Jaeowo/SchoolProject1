@@ -14,12 +14,15 @@ public class Honey : MonoBehaviour
 
     public GameObject player;
 
-    void Start()
+    void Awake()
     {
         imageChild = transform.GetChild(0);
         textChild = transform.GetChild(1);
 
         ChildActiveToFalse();
+
+        //Test
+        PlayerInfoManager.instance.SetProgress("chapter3.kuma0", true);
     }
     void Update()
     {
@@ -58,6 +61,7 @@ public class Honey : MonoBehaviour
     {
         if (!PlayerInfoManager.instance.GetProgress("FindYuzu"))
         {
+            Debug.Log("Collision");
             if (collision.CompareTag("Player"))
             {
                 isCollision = true;

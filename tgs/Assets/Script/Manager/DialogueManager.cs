@@ -259,6 +259,8 @@ public class DialogueManager : MonoBehaviour
         allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "ハチミツが大好き", 3, false));
         allDialogueList.Add(new Dialogue("chapter2.capy04", "capy", "って言えばいいんだ", 4, false));
         allDialogueList.Add(new Dialogue("chapter2.capy04", "nezumi", "カピバラさんありがとう！", 5, false));
+
+        allDialogueList.Add(new Dialogue("chapter2.capy05", "capy", "友だちの家探した？", 0, false));
         #endregion
 
         #region Chapter 3: Kuma

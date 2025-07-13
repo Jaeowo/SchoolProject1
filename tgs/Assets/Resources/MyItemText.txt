@@ -1,1 +1,1 @@
-[{"id":"Honey","itemName":"ハチミツ","description":"甘いにおい","isUsing":true}]
+[{"id":"Honey","itemName":"ハチミツ","description":"甘いにおい","isUsing":false},{"id":"Honey","itemName":"ハチミツ","description":"甘いにおい","isUsing":false},{"id":"Yuzu","itemName":"ゆず","description":"カピバラが欲しいかったゆず","isUsing":true},{"id":"Honey","itemName":"ハチミツ","description":"甘いにおい","isUsing":false}]
