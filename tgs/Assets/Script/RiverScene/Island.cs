@@ -5,11 +5,6 @@ public class Island : MonoBehaviour
     private float speed = 2f;
     private bool isArrive = false;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,8 +27,8 @@ public class Island : MonoBehaviour
         {
             Debug.Log("Arrive");
             isArrive = true;
-
-            // RiverSceneManager -> SceneChange
+            RiverSceneManager.instance.LoadEndingScene();
+            
         }
     }
 }

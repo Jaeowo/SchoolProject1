@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
+
 
 public class RiverSceneManager : MonoBehaviour
 {
@@ -84,7 +86,7 @@ public class RiverSceneManager : MonoBehaviour
 
     private void GameClear()
     {
-        if (clearCheck >= 5)
+        if (clearCheck >= 10)
         {
             isClear = true;
         }
@@ -114,5 +116,16 @@ public class RiverSceneManager : MonoBehaviour
             clearCheck++;
             Debug.Log("clear :" + clearCheck);
         }
+    }
+
+    public void LoadEndingScene()
+    {
+        StartCoroutine(DelayBackPlayScene());
+    }
+
+    private IEnumerator DelayBackPlayScene()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("EndingScene");
     }
 }
