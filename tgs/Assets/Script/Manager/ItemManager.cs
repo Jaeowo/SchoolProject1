@@ -114,7 +114,7 @@ public class ItemManager : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GetItem("Yuzu");
+            GetItem("Ticket");
         }
     }
 

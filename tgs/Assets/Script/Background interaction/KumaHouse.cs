@@ -25,7 +25,7 @@ public class KumaHouse : MonoBehaviour
 
         // Test
         // Later Please Delete here
-        //PlayerInfoManager.instance.SetProgress("chapter2.capy04", true);
+        PlayerInfoManager.instance.SetProgress("chapter2.capy04", true);
     }
 
     void Update()

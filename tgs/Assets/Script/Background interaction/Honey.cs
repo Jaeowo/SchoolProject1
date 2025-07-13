@@ -22,7 +22,7 @@ public class Honey : MonoBehaviour
         ChildActiveToFalse();
 
         //Test
-        PlayerInfoManager.instance.SetProgress("chapter3.kuma0", true);
+        //PlayerInfoManager.instance.SetProgress("chapter3.kuma0", true);
     }
     void Update()
     {
@@ -61,7 +61,6 @@ public class Honey : MonoBehaviour
     {
         if (!PlayerInfoManager.instance.GetProgress("CollectHoney"))
         {
-            Debug.Log("Collision");
             if (collision.CompareTag("Player"))
             {
                 isCollision = true;

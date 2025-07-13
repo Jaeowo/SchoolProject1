@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class KumaHouseExit : MonoBehaviour
@@ -24,7 +25,7 @@ public class KumaHouseExit : MonoBehaviour
     {
         if (isCollision && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.JoystickButton1)))
         {
-            playerTransform.position = PlayerInfoManager.instance.LoadPlayerPosition();
+            StartCoroutine(FadeOutInAndMove());
         }
     }
 
@@ -54,5 +55,18 @@ public class KumaHouseExit : MonoBehaviour
     {
         imageChild.gameObject.SetActive(false);
         textChild.gameObject.SetActive(false);
+    }
+
+    IEnumerator FadeOutInAndMove()
+    {
+
+        CameraManager.instance.FadeOut();
+
+        yield return new WaitForSeconds(CameraManager.instance.fadeDuration);
+        playerTransform.position = PlayerInfoManager.instance.LoadPlayerPosition();
+        yield return new WaitForSeconds(1.5f);
+
+        CameraManager.instance.FadeIn();
+        PlayerInfoManager.instance.SetIsMoving(true);
     }
 }
