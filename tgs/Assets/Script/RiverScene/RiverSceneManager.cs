@@ -126,6 +126,8 @@ public class RiverSceneManager : MonoBehaviour
     private IEnumerator DelayBackPlayScene()
     {
         yield return new WaitForSeconds(3f);
+        CameraManagerEpilogue.instance.FadeOut();
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("EndingScene");
     }
 }
