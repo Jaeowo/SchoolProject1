@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -30,6 +31,12 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+
+        // For Debug
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            SceneManager.LoadScene("EndingScene");
         }
     }
 }

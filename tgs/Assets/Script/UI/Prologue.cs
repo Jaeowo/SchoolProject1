@@ -80,7 +80,7 @@ public class Prologue : MonoBehaviour
             SetAlpha(g, Mathf.Clamp01(time / duration));
             yield return null;
         }
-        stepCompleted[stepIndex] = true; // 이 단계 완료됨
+        stepCompleted[stepIndex] = true;
         isTransitioning = false;
     }
 
@@ -118,9 +118,13 @@ public class Prologue : MonoBehaviour
         }
         stepCompleted[stepIndex] = true;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         PlayerInfoManager.instance.SetProgress("Prologue", true);
+
+        CameraManager.instance.FadeOut();
+        yield return new WaitForSeconds(1.5f);
+        CameraManager.instance.FadeIn();
 
         Destroy(gameObject);
     }

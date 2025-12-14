@@ -24,7 +24,7 @@ public class BoatMoving : MonoBehaviour
         //    ApplyFloating();
         //}
 
-        if(!RiverSceneManager.instance.isOver && !RiverSceneManager.instance.isClear)
+        if(!RiverSceneManager.instance.isOver)
         {
             HandleLaneInput();
             ApplyFloating();

@@ -13,6 +13,8 @@ public class HoneyPlayerMoving : MonoBehaviour
 
     // Flash Effect
     private SkeletonAnimation skeletonAnimation;
+    private string currentAnim = "";
+
     private float flashDuration = 0.5f;
     private float flashFrequency = 5.0f;
     private bool isFlashing = false;
@@ -37,6 +39,15 @@ public class HoneyPlayerMoving : MonoBehaviour
         else
         {
             moveInput = Vector2.zero;
+        }
+
+        if (moveInput != Vector2.zero)
+        {
+            SetAnimation("Walk", true);
+        }
+        else
+        {
+            SetAnimation("Idle", true);
         }
 
     }
@@ -89,5 +100,15 @@ public class HoneyPlayerMoving : MonoBehaviour
             flashTimer = flashDuration;
         }
     }
- 
+
+    private void SetAnimation(string name, bool loop)
+    {
+        if (currentAnim == name)
+        {
+            return;
+        }
+        skeletonAnimation.AnimationState.SetAnimation(0, name, loop);
+        currentAnim = name;
+    }
+
 }
